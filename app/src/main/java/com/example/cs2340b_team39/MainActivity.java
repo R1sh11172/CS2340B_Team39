@@ -15,11 +15,14 @@ public class MainActivity extends AppCompatActivity {
         Button endBtn = findViewById(R.id.quitButton);
 
         startBtn.setOnClickListener(v -> {
-            System.out.println("Button works");
+            //System.out.println("Button works");
+            setContentView(R.layout.activity_configuration);
         });
 
         endBtn.setOnClickListener(v -> {
             System.exit(0);
         });
+
+
     }
 }

@@ -9,24 +9,42 @@
         android:id="@+id/quitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="172dp"
         android:text="Quit"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="511dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startbutton" />
 
     <Button
         android:id="@+id/startbutton"
         android:layout_width="174dp"
         android:layout_height="62dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="167dp"
+        android:layout_marginEnd="119dp"
+        android:layout_marginBottom="26dp"
         android:text="Start Game"
-        tools:layout_editor_absoluteX="118dp"
-        tools:layout_editor_absoluteY="423dp" />
+        app:layout_constraintBottom_toTopOf="@+id/quitButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gameTitle" />
 
     <TextView
         android:id="@+id/gameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="203dp"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="154dp"
         android:text="Dungeon Crawler"
         android:textSize="40dp"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="203dp" />
+        app:layout_constraintBottom_toTopOf="@+id/startbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
