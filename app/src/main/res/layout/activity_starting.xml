@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/quitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quit"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="511dp" />
+
+    <Button
+        android:id="@+id/startbutton"
+        android:layout_width="174dp"
+        android:layout_height="62dp"
+        android:text="Start Game"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="423dp" />
+
+    <TextView
+        android:id="@+id/gameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dungeon Crawler"
+        android:textSize="40dp"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="203dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
