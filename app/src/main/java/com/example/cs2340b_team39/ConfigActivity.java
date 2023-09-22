@@ -48,7 +48,7 @@ public class ConfigActivity extends AppCompatActivity{
                     characterId = 0;
                     break;
             }
-            GameActivity.createPlayer(name.toString(), characterId, difficulty);
+            GameActivity.createPlayer(String.valueOf(name.getText()), characterId, difficulty);
             Intent game = new Intent(ConfigActivity.this, GameActivity.class);
             startActivity(game);
             finish();
