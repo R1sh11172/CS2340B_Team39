@@ -1,10 +1,14 @@
 package com.example.cs2340b_team39;
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
+
+import androidx.core.content.res.ResourcesCompat;
 
 public class Player {
     private String name;
-    private Image avatar;
+    private Drawable avatar;
     private double health;
     private double difficulty;
     // private Weapon equipped;
@@ -12,7 +16,6 @@ public class Player {
 
     public Player(String name, int characterId, double difficulty) {
         this.name = name;
-        //this.avatar = avatar;
         this.health = (100 - difficulty * 25);
         this.difficulty = difficulty;
     }
@@ -20,7 +23,7 @@ public class Player {
     public String getName() {
         return name;
     }
-    public Image getAvatar() {
+    public Drawable getAvatar() {
         return avatar;
     }
 
