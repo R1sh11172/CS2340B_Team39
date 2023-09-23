@@ -1,7 +1,7 @@
 package com.example.cs2340b_team39;
 
 import android.content.Intent;
-import android.media.Image;
+//import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-public class ConfigActivity extends AppCompatActivity{
+public class ConfigActivity extends AppCompatActivity {
     private static int sprite;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,39 +27,41 @@ public class ConfigActivity extends AppCompatActivity{
             RadioGroup characterGroup = findViewById(R.id.radioGroup2);
             double difficulty;
             switch (difficultyRadioGroup.getCheckedRadioButtonId()) {
-                case R.id.radioButton:
-                    difficulty = 0;
-                    break;
-                case R.id.radioButton2:
-                    difficulty = 1;
-                    break;
-                case R.id.radioButton3:
-                    difficulty = 2;
-                    break;
-                default:
-                    difficulty = -1;
-                    break;
+            case R.id.radioButton:
+                difficulty = 0;
+                break;
+            case R.id.radioButton2:
+                difficulty = 1;
+                break;
+            case R.id.radioButton3:
+                difficulty = 2;
+                break;
+            default:
+                difficulty = -1;
+                break;
             }
             switch (characterGroup.getCheckedRadioButtonId()) {
-                case R.id.imageButton:
-                    characterId = 0;
-                    break;
-                case R.id.imageButton2:
-                    characterId = 1;
-                    break;
-                case R.id.imageButton3:
-                    characterId = 2;
-                    break;
-                default:
-                    characterId = -1;
-                    break;
+            case R.id.imageButton:
+                characterId = 0;
+                break;
+            case R.id.imageButton2:
+                characterId = 1;
+                break;
+            case R.id.imageButton3:
+                characterId = 2;
+                break;
+            default:
+                characterId = -1;
+                break;
             }
             //System.out.println((name.getText()));
             //System.out.println(difficulty);
             //System.out.println(characterId);
             //isBlank() throwing an error for some reason so I'm leaving it off for now
-            if (!(String.valueOf(name.getText()) == null) && !(String.valueOf(name.getText()).isEmpty())
-                && /*!(String.valueOf(name.getText()).isBlank()) && */ difficulty > -1 && characterId > -1) {
+            if (!(String.valueOf(name.getText()) == null)
+                    && !(String.valueOf(name.getText()).isEmpty())
+                && !(String.valueOf(name.getText()).isBlank())
+                    &&  difficulty > -1 && characterId > -1) {
                 GameActivity.createPlayer(String.valueOf(name.getText()), characterId, difficulty);
                 Intent game = new Intent(ConfigActivity.this, GameActivity.class);
                 sprite = characterId;

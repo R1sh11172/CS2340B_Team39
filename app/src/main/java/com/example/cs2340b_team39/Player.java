@@ -1,10 +1,10 @@
 package com.example.cs2340b_team39;
 
-import android.content.res.Resources;
+//import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
+//import android.media.Image;
 
-import androidx.core.content.res.ResourcesCompat;
+//import androidx.core.content.res.ResourcesCompat;
 
 public class Player {
     private String name;
