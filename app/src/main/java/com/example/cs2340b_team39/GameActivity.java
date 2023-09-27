@@ -46,6 +46,6 @@ public class GameActivity extends AppCompatActivity {
 
 
     public static void createPlayer(String name, int characterId, double difficulty) {
-        player = new Player(name, characterId, difficulty);
+        player = Player.getPlayer(name, characterId, difficulty);
     }
 }

@@ -1,29 +1,43 @@
 package com.example.cs2340b_team39;
 
-//import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-//import android.media.Image;
-
-//import androidx.core.content.res.ResourcesCompat;
+import android.media.Image;
 
 public class Player {
     private String name;
-    private Drawable avatar;
+    private Image avatar;
     private double health;
     private double difficulty;
     // private Weapon equipped;
     // private Ability ability;
+    private volatile static Player player;
 
-    public Player(String name, int characterId, double difficulty) {
+    private Player(String name, int characterId, double difficulty) {
         this.name = name;
+        //this.avatar = avatar;
         this.health = (100 - difficulty * 25);
         this.difficulty = difficulty;
+    }
+
+    /*
+     *
+     * Name: getPlayer()
+     * @return the instance of the player
+     */
+    public static Player getPlayer(String name, int characterId, double difficulty) {
+        if (player == null) {
+            synchronized (Player.class) {
+                if (player == null) {
+                    player = new Player(name,characterId,difficulty);
+                }
+            }
+        }
+        return player;
     }
 
     public String getName() {
         return name;
     }
-    public Drawable getAvatar() {
+    public Image getAvatar() {
         return avatar;
     }
 
