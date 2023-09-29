@@ -19,6 +19,7 @@ public class GameActivity extends AppCompatActivity {
         TextView name = findViewById(R.id.nameDisplay);
         TextView health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
+        TextView score = findViewById(R.id.scoreDisplay);
         name.setText(player.getName());
         health.setText(player.getHealth() + "");
         difficulty.setText(Difficulty.values()[(int) player.getDifficulty()] + "");

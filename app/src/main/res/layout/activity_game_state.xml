@@ -6,6 +6,19 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/scoreDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="193dp"
+        android:layout_marginBottom="139dp"
+        android:text="0"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/nameDisplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
         android:id="@+id/healthDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -106,4 +119,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/healthDisplay" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginBottom="139dp"
+        android:text="Score: "
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
