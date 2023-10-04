@@ -9,6 +9,7 @@ public class Player {
     private double difficulty;
     // private Weapon equipped;
     // private Ability ability;
+    private double score;
     private volatile static Player player;
 
     private Player(String name, int characterId, double difficulty) {
@@ -47,5 +48,12 @@ public class Player {
 
     public double getDifficulty() {
         return difficulty;
+    }
+
+    public void setScore(int val) {
+        this.score = val;
+    }
+    public double getScore(int val) {
+        return val;
     }
 }
