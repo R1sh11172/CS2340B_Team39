@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameActivityMap3 extends AppCompatActivity {
-    public static Player player = GameActivity.player;
+    private static Player player = GameActivity.getPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
