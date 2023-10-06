@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 public class GameActivity extends AppCompatActivity {
-    protected static Player player;
+    private static Player player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,5 +53,9 @@ public class GameActivity extends AppCompatActivity {
 
     public static void createPlayer(String name, int characterId, double difficulty) {
         player = Player.getPlayer(name, characterId, difficulty);
+    }
+
+    public static Player getPlayer() {
+        return player;
     }
 }
