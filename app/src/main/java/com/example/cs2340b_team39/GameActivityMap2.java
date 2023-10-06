@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameActivityMap2 extends AppCompatActivity {
-    private static Player player = GameActivity.getPlayer();
+    private static Player player = Player.getPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class GameActivityMap2 extends AppCompatActivity {
         TextView score = findViewById(R.id.scoreDisplay);
         name.setText(player.getName());
         health.setText(player.getHealth() + "");
+        player.getScore().setTextView(score);
         difficulty.setText(Difficulty.values()[(int) player.getDifficulty()] + "");
         Button endButton = findViewById(R.id.button);
         Button nextMap = findViewById(R.id.nextmap);
@@ -48,8 +49,4 @@ public class GameActivityMap2 extends AppCompatActivity {
         });
     }
 
-
-    public static void createPlayer(String name, int characterId, double difficulty) {
-        player = Player.getPlayer(name, characterId, difficulty);
-    }
 }

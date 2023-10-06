@@ -18,6 +18,7 @@
             android:layout_height="102dp"
             android:layout_marginStart="17dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="480dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,12 +31,16 @@
             android:id="@+id/scoreDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="65dp"
             android:layout_marginEnd="160dp"
-            android:layout_marginBottom="272dp"
+            android:layout_marginBottom="285dp"
             android:text="0"
             android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@+id/nameDisplay"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/score"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/healthDisplay"
@@ -68,6 +73,7 @@
             android:layout_marginTop="132dp"
             android:text="Name: "
             android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintEnd_toStartOf="@+id/nameDisplay"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/midBlock" />
@@ -127,11 +133,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
+            android:layout_marginTop="58dp"
+            android:layout_marginEnd="3dp"
             android:layout_marginBottom="272dp"
             android:text="Score: "
             android:textSize="30dp"
             app:layout_constraintBottom_toTopOf="@+id/textView4"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/scoreDisplay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
         <ImageView
@@ -139,9 +149,13 @@
             android:layout_width="252dp"
             android:layout_height="136dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/nextmap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/leftBlock"
             app:layout_constraintTop_toBottomOf="@+id/scoreDisplay"
-            app:srcCompat="@drawable/stairs_top"
-            tools:layout_editor_absoluteX="109dp" />
+            app:srcCompat="@drawable/stairs_top" />
 
         <Button
             android:id="@+id/nextmap"
@@ -164,6 +178,7 @@
             android:layout_marginTop="288dp"
             android:layout_marginBottom="144dp"
             app:layout_constraintBottom_toTopOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/midBlock"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
