@@ -30,6 +30,24 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="com.example.cs2340b_team39.GameActivityMap2"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.cs2340b_team39.GameActivityMap3"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.example.cs2340b_team39.ConfigActivity"
             android:exported="true">
             <intent-filter>
