@@ -9,21 +9,21 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameActivityMap3 extends AppCompatActivity {
-    private static Player player = Player.getPlayer();
+    private Player player = Player.getPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gamestatemap2);
+        setContentView(R.layout.activity_gamestatemap3);
         TextView name = findViewById(R.id.nameDisplay);
         TextView health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
         TextView score = findViewById(R.id.scoreDisplay);
-        name.setText(player.getName());
-        health.setText(player.getHealth() + "");
+        name.setText("Name: " + player.getName());
+        health.setText("Health: " + player.getHealth() + "");
         player.getScore().setTextView(score);
-        difficulty.setText(Difficulty.values()[(int) player.getDifficulty()] + "");
+        difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         Button endButton = findViewById(R.id.button);
-        Button nextMap = findViewById(R.id.nextmap);
+        //Button nextMap = findViewById(R.id.nextmap);
         ImageView sprite = findViewById(R.id.imageView);
         int spriteChoice = ConfigActivity.getSprite();
         switch (spriteChoice) {
@@ -40,10 +40,10 @@ public class GameActivityMap3 extends AppCompatActivity {
                 break;
         }
 
-        nextMap.setOnClickListener(v -> {
-            Intent nextIntent = new Intent(GameActivityMap3.this, GameActivity.class);
-            startActivity(nextIntent);
-        });
+//        nextMap.setOnClickListener(v -> {
+//            Intent nextIntent = new Intent(GameActivityMap3.this, GameActivity.class);
+//            startActivity(nextIntent);
+//        });
         endButton.setOnClickListener(v -> {
             Intent endIntent = new Intent(GameActivityMap3.this, EndActivity.class);
             startActivity(endIntent);

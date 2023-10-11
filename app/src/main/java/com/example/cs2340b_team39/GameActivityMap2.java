@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameActivityMap2 extends AppCompatActivity {
-    private static Player player = Player.getPlayer();
+    private Player player = Player.getPlayer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,11 +18,11 @@ public class GameActivityMap2 extends AppCompatActivity {
         TextView health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
         TextView score = findViewById(R.id.scoreDisplay);
-        name.setText(player.getName());
-        health.setText(player.getHealth() + "");
+        name.setText("Name: " + player.getName());
+        health.setText("Health: " + player.getHealth() + "");
         player.getScore().setTextView(score);
-        difficulty.setText(Difficulty.values()[(int) player.getDifficulty()] + "");
-        Button endButton = findViewById(R.id.button);
+        difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
+        //Button endButton = findViewById(R.id.button);
         Button nextMap = findViewById(R.id.nextmap);
         ImageView sprite = findViewById(R.id.imageView);
         int spriteChoice = ConfigActivity.getSprite();
@@ -43,10 +43,10 @@ public class GameActivityMap2 extends AppCompatActivity {
             Intent nextIntent = new Intent(GameActivityMap2.this, GameActivityMap3.class);
             startActivity(nextIntent);
         });
-        endButton.setOnClickListener(v -> {
-            Intent endIntent = new Intent(GameActivityMap2.this, EndActivity.class);
-            startActivity(endIntent);
-        });
+//        endButton.setOnClickListener(v -> {
+//            Intent endIntent = new Intent(GameActivityMap2.this, EndActivity.class);
+//            startActivity(endIntent);
+//        });
     }
 
 }

@@ -59,4 +59,7 @@ public class Player {
     public Score getScore() {
         return score;
     }
+    public void resetPlayer() {
+        player = null;
+    }
 }
