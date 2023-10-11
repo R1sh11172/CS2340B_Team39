@@ -21,13 +21,13 @@ public class GameActivity extends AppCompatActivity {
         TextView health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
         TextView score = findViewById(R.id.scoreDisplay);
-        name.setText(player.getName());
-        health.setText(player.getHealth() + "");
+        name.setText("Name: " + player.getName());
+        health.setText("Health: " + player.getHealth() + "");
         player.getScore().count();
         player.getScore().setTextView(score);
-        difficulty.setText(Difficulty.values()[(int) player.getDifficulty()] + "");
+        difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         Button nextMap = findViewById(R.id.nextmap);
-        Button endButton = findViewById(R.id.button);
+        //Button endButton = findViewById(R.id.button);
         ImageView sprite = findViewById(R.id.imageView);
         int spriteChoice = ConfigActivity.getSprite();
         switch (spriteChoice) {
@@ -47,14 +47,15 @@ public class GameActivity extends AppCompatActivity {
             Intent nextIntent = new Intent(GameActivity.this, GameActivityMap2.class);
             startActivity(nextIntent);
         });
-        endButton.setOnClickListener(v -> {
-            Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
-            startActivity(endIntent);
-        });
+//        endButton.setOnClickListener(v -> {
+//            Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
+//            startActivity(endIntent);
+//        });
     }
 
 
     public static void createPlayer(String name, int characterId, double difficulty) {
         player = Player.getPlayer(name, characterId, difficulty);
+        player.getScore().setPlayer();
     }
 }

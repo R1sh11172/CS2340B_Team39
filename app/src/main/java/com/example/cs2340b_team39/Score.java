@@ -1,27 +1,46 @@
 package com.example.cs2340b_team39;
 
-import java.sql.Time;
+import java.util.Calendar;
 import java.util.Date;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.widget.TextView;
 
-public class Score {
+public class Score implements Comparable {
 
     private String name;
-    private Time time;
-    private int maxTime = 300;
     private Date date;
-    private int score;
+    private int score = 300;
     private TextView scoreCount;
+    private Player player;
+    private boolean finished = false;
 
     public Score() {
-        //name = Player.getPlayer().getName();
+        date = Calendar.getInstance().getTime();
+    }
+    public int compareTo(Object o) {
+        if (o == null) {
+            return 1;
+        }
+        if (o.getClass() != Score.class) {
+            return 1;
+        }
+        //Log.i("Test", "Made it");
+        Score scoreO = (Score) o;
+        if (this.score > scoreO.score) {
+            return 1;
+        } else if (this.score < scoreO.score) {
+            return -1;
+        }
+        return 0;
     }
     public void count() {
         new CountDownTimer(300000, 1000) {
             public void onTick(long millisUntilFinished) {
-                scoreCount.setText(String.valueOf(maxTime));
-                maxTime--;
+                if (!finished) {
+                    scoreCount.setText("Score: " + String.valueOf(score));
+                    score--;
+                }
             }
             public  void onFinish() {
                 scoreCount.setText(0);
@@ -29,7 +48,18 @@ public class Score {
         }.start();
     }
 
+    public String toString() {
+        return "Score: " + score + " Name: " + name + " Date: " + date;
+    }
+
     public void setTextView(TextView t) {
         scoreCount = t;
+    }
+    public void setPlayer() {
+        player = Player.getPlayer();
+        name = player.getName();
+    }
+    public void setFinished(boolean t) {
+        finished = t;
     }
 }
