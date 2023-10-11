@@ -62,4 +62,7 @@ public class Score implements Comparable {
     public void setFinished(boolean t) {
         finished = t;
     }
+    public void setScore(int val) {
+        score = val;
+    }
 }
