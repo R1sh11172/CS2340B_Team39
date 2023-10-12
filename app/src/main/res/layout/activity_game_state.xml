@@ -24,6 +24,64 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/stairs_top" />
 
+            <TextView
+                android:id="@+id/nameDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="129dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginEnd="200dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/difficultyDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="127dp"
+                android:layout_marginTop="315dp"
+                android:layout_marginEnd="202dp"
+                android:layout_marginBottom="75dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/healthDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="129dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginEnd="200dp"
+                android:layout_marginBottom="22dp"
+                android:text="TextView"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <Button
+                android:id="@+id/nextmap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="124dp"
+                android:layout_marginEnd="175dp"
+                android:layout_marginBottom="150dp"
+                android:text="Next Map"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/difficultyDisplay"
+                app:layout_constraintVertical_bias="1.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -43,61 +101,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <TextView
-            android:id="@+id/healthDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="200dp"
-            android:layout_marginBottom="50dp"
-            android:text="TextView"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/difficultyDisplay" />
-
-        <TextView
-            android:id="@+id/difficultyDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginEnd="200dp"
-            android:text="TextView"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/healthDisplay"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nameDisplay" />
-
-        <TextView
-            android:id="@+id/nameDisplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="266dp"
-            android:layout_marginEnd="201dp"
-            android:text="TextView"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/difficultyDisplay"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:layout_constraintVertical_bias="1.0" />
-
-
-        <Button
-            android:id="@+id/nextmap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="133dp"
-            android:layout_marginEnd="166dp"
-            android:layout_marginBottom="10dp"
-            android:text="Next Map"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/healthDisplay" />
 
         <ImageView
             android:id="@+id/imageView"
