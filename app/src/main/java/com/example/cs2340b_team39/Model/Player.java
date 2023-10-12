@@ -9,9 +9,9 @@ public class Player {
     private double difficulty;
     // private Weapon equipped;
     // private Ability ability;
-    public Score score;
+    private Score score;
     private int characterId;
-    private volatile static Player player;
+    private static volatile Player player;
 
     private Player(String name, int characterId, double difficulty) {
         this.name = name;
@@ -31,7 +31,7 @@ public class Player {
         if (player == null) {
             synchronized (Player.class) {
                 if (player == null) {
-                    player = new Player(name,characterId,difficulty);
+                    player = new Player(name, characterId, difficulty);
                 }
             }
         }

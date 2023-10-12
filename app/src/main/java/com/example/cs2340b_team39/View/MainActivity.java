@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cs2340b_team39.R;
-import com.example.cs2340b_team39.View.ConfigActivity;
+//import com.example.cs2340b_team39.View.ConfigActivity;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -31,23 +31,23 @@ public class GameActivityMap3 extends AppCompatActivity {
         ImageView sprite = findViewById(R.id.imageView);
         int spriteChoice = ConfigActivity.getSprite();
         switch (spriteChoice) {
-            case 0:
-                sprite.setImageResource(R.drawable.npc_elf);
-                break;
-            case 1:
-                sprite.setImageResource(R.drawable.npc_knight_blue);
-                break;
-            case 2:
-                sprite.setImageResource(R.drawable.npc_wizzard);
-                break;
-            default:
-                break;
+        case 0:
+            sprite.setImageResource(R.drawable.npc_elf);
+            break;
+        case 1:
+            sprite.setImageResource(R.drawable.npc_knight_blue);
+            break;
+        case 2:
+            sprite.setImageResource(R.drawable.npc_wizzard);
+            break;
+        default:
+            break;
         }
 
-//        nextMap.setOnClickListener(v -> {
-//            Intent nextIntent = new Intent(GameActivityMap3.this, GameActivity.class);
-//            startActivity(nextIntent);
-//        });
+        //        nextMap.setOnClickListener(v -> {
+        //            Intent nextIntent = new Intent(GameActivityMap3.this, GameActivity.class);
+        //            startActivity(nextIntent);
+        //        });
         endButton.setOnClickListener(v -> {
             Intent endIntent = new Intent(GameActivityMap3.this, EndActivity.class);
             startActivity(endIntent);
