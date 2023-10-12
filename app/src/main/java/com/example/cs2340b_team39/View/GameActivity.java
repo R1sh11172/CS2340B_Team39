@@ -1,4 +1,4 @@
-package com.example.cs2340b_team39;
+package com.example.cs2340b_team39.View;
 
 import android.content.Intent;
 //import android.graphics.drawable.Drawable;
@@ -10,6 +10,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cs2340b_team39.Model.Difficulty;
+import com.example.cs2340b_team39.Model.Player;
+import com.example.cs2340b_team39.R;
+import com.example.cs2340b_team39.ViewModel.ViewModel;
+
 public class GameActivity extends AppCompatActivity {
     private static Player player;
 
@@ -21,10 +27,11 @@ public class GameActivity extends AppCompatActivity {
         TextView health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
         TextView score = findViewById(R.id.scoreDisplay);
+        player = Player.getPlayer();
         name.setText("Name: " + player.getName());
         health.setText("Health: " + player.getHealth() + "");
         player.getScore().count();
-        player.getScore().setTextView(score);
+        ViewModel.changeScoreId(score);
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         Button nextMap = findViewById(R.id.nextmap);
         //Button endButton = findViewById(R.id.button);
@@ -51,11 +58,5 @@ public class GameActivity extends AppCompatActivity {
 //            Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
 //            startActivity(endIntent);
 //        });
-    }
-
-
-    public static void createPlayer(String name, int characterId, double difficulty) {
-        player = Player.getPlayer(name, characterId, difficulty);
-        player.getScore().setPlayer();
     }
 }

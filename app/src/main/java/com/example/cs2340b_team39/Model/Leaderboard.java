@@ -1,6 +1,4 @@
-package com.example.cs2340b_team39;
-
-import java.util.Arrays;
+package com.example.cs2340b_team39.Model;
 
 public class Leaderboard {
     private static volatile Leaderboard leaderboard;

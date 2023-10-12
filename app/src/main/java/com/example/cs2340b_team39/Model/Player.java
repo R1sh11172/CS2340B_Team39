@@ -1,4 +1,4 @@
-package com.example.cs2340b_team39;
+package com.example.cs2340b_team39.Model;
 
 import android.media.Image;
 

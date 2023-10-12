@@ -1,4 +1,4 @@
-package com.example.cs2340b_team39;
+package com.example.cs2340b_team39.View;
 
 import android.content.Intent;
 //import android.media.Image;
@@ -10,6 +10,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cs2340b_team39.R;
+import com.example.cs2340b_team39.ViewModel.ViewModel;
+
 public class ConfigActivity extends AppCompatActivity {
     private static int sprite;
     @Override
@@ -58,11 +62,9 @@ public class ConfigActivity extends AppCompatActivity {
             //System.out.println(difficulty);
             //System.out.println(characterId);
             //isBlank() throwing an error for some reason so I'm leaving it off for now
-            if (!(String.valueOf(name.getText()) == null)
-                    && !(String.valueOf(name.getText()).isEmpty())
-                && !(String.valueOf(name.getText()).isBlank())
-                    &&  difficulty > -1 && characterId > -1) {
-                GameActivity.createPlayer(String.valueOf(name.getText()), characterId, difficulty);
+            String spriteName = String.valueOf(name.getText());
+            if (ViewModel.validateCredentials(spriteName, (int) difficulty, characterId)) {
+                ViewModel.createPlayer(String.valueOf(name.getText()), characterId, difficulty);
                 Intent game = new Intent(ConfigActivity.this, GameActivity.class);
                 sprite = characterId;
                 startActivity(game);

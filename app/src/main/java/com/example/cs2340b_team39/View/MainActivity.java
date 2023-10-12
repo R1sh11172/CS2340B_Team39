@@ -1,4 +1,4 @@
-package com.example.cs2340b_team39;
+package com.example.cs2340b_team39.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.widget.Button;
 //import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cs2340b_team39.R;
+import com.example.cs2340b_team39.View.ConfigActivity;
 
 public class MainActivity extends AppCompatActivity {
 

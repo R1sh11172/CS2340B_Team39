@@ -1,4 +1,4 @@
-package com.example.cs2340b_team39;
+package com.example.cs2340b_team39.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cs2340b_team39.Model.Leaderboard;
+import com.example.cs2340b_team39.Model.Player;
+import com.example.cs2340b_team39.R;
+import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class EndActivity extends AppCompatActivity {
     @Override
@@ -15,7 +20,8 @@ public class EndActivity extends AppCompatActivity {
         Leaderboard lb = Leaderboard.getLeaderboard();
         Player player = Player.getPlayer();
         player.getScore().setFinished(true);
-        lb.updateScores(player.getScore());
+        ViewModel.updateScores();
+        //lb.updateScores(player.getScore());
         Button resButton = findViewById(R.id.restart);
         TextView current = findViewById(R.id.current1);
         TextView score1 = findViewById(R.id.score1);
