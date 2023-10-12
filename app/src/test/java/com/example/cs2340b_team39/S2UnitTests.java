@@ -107,4 +107,15 @@ public class S2UnitTests {
         assertFalse(ViewModel.validateCredentials("", 1, 2));
     }
 
+    @Test
+    public void whiteSpaceCheck() {
+        assertFalse(ViewModel.validateCredentials("      ", 0, 0));
+    }
+
+    @Test
+    public void invalidDifficulty() {
+        assertFalse(ViewModel.validateCredentials("Vraj", -1, 2));
+    }
+
+
 }
