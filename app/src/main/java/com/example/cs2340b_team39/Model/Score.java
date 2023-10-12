@@ -1,10 +1,11 @@
-package com.example.cs2340b_team39;
+package com.example.cs2340b_team39.Model;
 
 import java.util.Calendar;
 import java.util.Date;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.widget.TextView;
+
+import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class Score implements Comparable {
 
@@ -38,12 +39,12 @@ public class Score implements Comparable {
         new CountDownTimer(300000, 1000) {
             public void onTick(long millisUntilFinished) {
                 if (!finished) {
-                    scoreCount.setText("Score: " + String.valueOf(score));
+                    ViewModel.updateScore(scoreCount, score);
                     score--;
                 }
             }
             public  void onFinish() {
-                scoreCount.setText(0);
+                ViewModel.updateScore(scoreCount, score);
             }
         }.start();
     }

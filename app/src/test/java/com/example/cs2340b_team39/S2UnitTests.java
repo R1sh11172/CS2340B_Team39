@@ -3,6 +3,10 @@ package com.example.cs2340b_team39;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+
+import com.example.cs2340b_team39.Model.Leaderboard;
+import com.example.cs2340b_team39.Model.Score;
+
 public class S2UnitTests {
     @Test
     public void addToEmptyLeaderboard() {
