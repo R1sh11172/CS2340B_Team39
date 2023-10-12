@@ -39,4 +39,7 @@ public class Leaderboard {
             scores[insert] = current;
         }
     }
+    public void clearScores() {
+        scores = new Score[5];
+    }
 }
