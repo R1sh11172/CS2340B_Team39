@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="55dp">
 
         <TextView
             android:id="@+id/scoreDisplay"
@@ -96,15 +96,6 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView21"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="230dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView26"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/darkness_top" />
-
-        <ImageView
             android:id="@+id/imageView3"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -132,47 +123,56 @@
             app:srcCompat="@drawable/darkness_top" />
 
         <ImageView
-            android:id="@+id/imageView26"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="230dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/darkness_top" />
-
-        <ImageView
             android:id="@+id/imageView25"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="230dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView24"
-            app:layout_constraintTop_toBottomOf="@+id/scoreDisplay"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/darkness_top" />
 
         <ImageView
             android:id="@+id/imageView23"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="66dp"
+            android:layout_marginTop="230dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView22"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/darkness_top" />
 
         <ImageView
             android:id="@+id/imageView24"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="66dp"
+            android:layout_marginTop="230dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView23"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/darkness_top" />
 
         <ImageView
             android:id="@+id/imageView22"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="228dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView21"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/darkness_top" />
+
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="228dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/darkness_top" />
+
+        <ImageView
+            android:id="@+id/imageView21"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="228dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView26"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/darkness_top" />
 
@@ -180,36 +180,9 @@
             android:id="@+id/imageView5"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="131dp"
+            android:layout_marginTop="128dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            app:srcCompat="@drawable/darkness_bottom" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="131dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView6"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            app:srcCompat="@drawable/darkness_bottom" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="131dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView10"
-            app:layout_constraintTop_toBottomOf="@+id/imageView28"
-            app:srcCompat="@drawable/darkness_bottom" />
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="131dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView7"
-            app:layout_constraintTop_toBottomOf="@+id/imageView27"
             app:srcCompat="@drawable/darkness_bottom" />
 
         <ImageView
@@ -222,10 +195,20 @@
             app:srcCompat="@drawable/darkness_bottom" />
 
         <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="128dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/imageView22"
+            app:srcCompat="@drawable/darkness_bottom" />
+
+        <ImageView
             android:id="@+id/imageView11"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="131dp"
+            android:layout_marginTop="128dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView12"
             app:layout_constraintTop_toBottomOf="@+id/imageView23"
             app:srcCompat="@drawable/darkness_bottom" />
@@ -234,44 +217,66 @@
             android:id="@+id/imageView7"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="131dp"
+            android:layout_marginTop="128dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView11"
             app:layout_constraintTop_toBottomOf="@+id/imageView25"
             app:srcCompat="@drawable/darkness_bottom" />
 
         <ImageView
-            android:id="@+id/imageView12"
+            android:id="@+id/imageView10"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="131dp"
-            android:layout_marginEnd="51dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageView8"
-            app:layout_constraintTop_toBottomOf="@+id/imageView22"
+            android:layout_marginTop="128dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toBottomOf="@+id/imageView27"
+            app:srcCompat="@drawable/darkness_bottom" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="128dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView10"
+            app:layout_constraintTop_toBottomOf="@+id/imageView28"
+            app:srcCompat="@drawable/darkness_bottom" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="128dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
             app:srcCompat="@drawable/darkness_bottom" />
 
         <ImageView
             android:id="@+id/imageView30"
             android:layout_width="68dp"
             android:layout_height="61dp"
-            app:srcCompat="@drawable/floor_mud_w"
-            tools:layout_editor_absoluteX="337dp"
-            tools:layout_editor_absoluteY="400dp" />
+            android:layout_marginTop="376dp"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/floor_mud_w" />
 
         <ImageView
             android:id="@+id/imageView31"
             android:layout_width="96dp"
             android:layout_height="92dp"
-            app:srcCompat="@drawable/floor_mud_w"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="275dp" />
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="276dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/floor_mud_w" />
 
         <ImageView
             android:id="@+id/imageView32"
             android:layout_width="65dp"
             android:layout_height="70dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
             app:layout_constraintTop_toBottomOf="@+id/imageView31"
-            app:srcCompat="@drawable/darkness_left"
-            tools:layout_editor_absoluteX="2dp" />
+            app:srcCompat="@drawable/darkness_left" />
 
         <ImageView
             android:id="@+id/imageView34"
@@ -291,52 +296,54 @@
             app:srcCompat="@drawable/darkness_right" />
 
         <ImageView
-            android:id="@+id/imageView36"
-            android:layout_width="68dp"
-            android:layout_height="65dp"
-            app:srcCompat="@drawable/darkness_right"
-            tools:layout_editor_absoluteX="383dp"
-            tools:layout_editor_absoluteY="367dp" />
-
-        <ImageView
             android:id="@+id/imageView37"
             android:layout_width="123dp"
             android:layout_height="104dp"
-            app:srcCompat="@drawable/floor_stain_ne"
-            tools:layout_editor_absoluteX="270dp"
-            tools:layout_editor_absoluteY="275dp" />
+            android:layout_marginTop="276dp"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/floor_stain_ne" />
 
         <ImageView
             android:id="@+id/imageView38"
             android:layout_width="153dp"
             android:layout_height="146dp"
-            app:srcCompat="@drawable/floor_plain"
-            tools:layout_editor_absoluteX="86dp"
-            tools:layout_editor_absoluteY="275dp" />
+            android:layout_marginStart="88dp"
+            android:layout_marginTop="276dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/floor_plain" />
 
         <ImageView
             android:id="@+id/imageView41"
             android:layout_width="98dp"
             android:layout_height="93dp"
-            app:srcCompat="@drawable/floor_plain"
-            tools:layout_editor_absoluteX="192dp"
-            tools:layout_editor_absoluteY="275dp" />
+            android:layout_marginStart="196dp"
+            android:layout_marginTop="276dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/floor_plain" />
 
         <ImageView
             android:id="@+id/imageView42"
             android:layout_width="122dp"
             android:layout_height="110dp"
-            app:srcCompat="@drawable/floor_plain"
-            tools:layout_editor_absoluteX="229dp"
-            tools:layout_editor_absoluteY="327dp" />
+            android:layout_marginStart="212dp"
+            android:layout_marginTop="328dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/floor_plain" />
 
         <ImageView
             android:id="@+id/imageView44"
             android:layout_width="47dp"
             android:layout_height="43dp"
-            app:srcCompat="@drawable/door_closed"
-            tools:layout_editor_absoluteX="350dp"
-            tools:layout_editor_absoluteY="418dp" />
+            android:layout_marginTop="412dp"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/door_closed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
