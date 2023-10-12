@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 
 import com.example.cs2340b_team39.Model.Leaderboard;
 import com.example.cs2340b_team39.Model.Score;
+import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class S2UnitTests {
     @Test
@@ -95,4 +96,15 @@ public class S2UnitTests {
         assertArrayEquals(lb.getScores(), expected);
         lb.clearScores();
     }
+
+    @Test
+    public void testValidation() {
+        assertTrue(ViewModel.validateCredentials("Protagonist", 2, 1));
+    }
+
+    @Test
+    public void nullNameCheck() {
+        assertFalse(ViewModel.validateCredentials("", 1, 2));
+    }
+
 }
