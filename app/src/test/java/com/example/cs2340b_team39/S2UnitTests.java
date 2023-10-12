@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import com.example.cs2340b_team39.Model.Leaderboard;
+import com.example.cs2340b_team39.Model.Player;
 import com.example.cs2340b_team39.Model.Score;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
 
@@ -103,7 +104,7 @@ public class S2UnitTests {
     }
 
     @Test
-    public void nullNameCheck() {
+    public void emptyNameCheck() {
         assertFalse(ViewModel.validateCredentials("", 1, 2));
     }
 
@@ -115,6 +116,14 @@ public class S2UnitTests {
     @Test
     public void invalidDifficulty() {
         assertFalse(ViewModel.validateCredentials("Vraj", -1, 2));
+    }
+    @Test
+    public void invalidCharacterID() {
+        assertFalse(ViewModel.validateCredentials("hey", 0, -1));
+    }
+    @Test
+    public void nullNameCheck() {
+        assertFalse(ViewModel.validateCredentials(null, 0, 0));
     }
 
 
