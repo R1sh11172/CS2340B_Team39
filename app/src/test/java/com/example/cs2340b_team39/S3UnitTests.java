@@ -70,4 +70,38 @@ public class S3UnitTests {
         assertEquals(p.getPlayerX(), 90, 1);
         p.resetPlayer();
     }
+
+    @Test
+    public void moveRightMediumDiff() {
+        Player p = Player.getPlayer("PlayerTest", 0, 1);
+        PlayerMovement.setTestCase(true);
+        ActiveSub.setG1Active(true);
+        ActiveSub.setPlayer(p);
+        ActiveSub.initializePlayer();
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 100, 1);
+        p.moveDir(1);
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 115, 1);
+        p.resetPlayer();
+    }
+
+    @Test
+    public void moveLeftMediumDiff() {
+        Player p = Player.getPlayer("PLayerTest", 0, 1);
+        PlayerMovement.setTestCase(true);
+        ActiveSub.setG1Active(true);
+        ActiveSub.setPlayer(p);
+        ActiveSub.initializePlayer();
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 100, 1);
+        p.moveDir(3);
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 85, 1);
+        p.resetPlayer();
+    }
+
+
+
+
 }
