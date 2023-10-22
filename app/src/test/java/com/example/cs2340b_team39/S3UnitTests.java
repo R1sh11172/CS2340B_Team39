@@ -15,7 +15,7 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class S3UnitTests {
     @Test
-    public void moveRightEasyDiff() {
+    public void moveRightEasyDifficulty() {
         Player p = Player.getPlayer("Josh", 0, 0);
         PlayerMovement.setTestCase(true);
         ActiveSub.setG1Active(true);
@@ -29,7 +29,7 @@ public class S3UnitTests {
         p.resetPlayer();
     }
     @Test
-    public void moveUpEasyDiff() {
+    public void moveUpEasyDifficulty() {
         Player p = Player.getPlayer("Josh", 0, 0);
         PlayerMovement.setTestCase(true);
         ActiveSub.setG1Active(true);
@@ -40,6 +40,34 @@ public class S3UnitTests {
         p.moveDir(0);
         assertEquals(p.getPlayerY(), 70, 1);
         assertEquals(p.getPlayerX(), 100, 1);
+        p.resetPlayer();
+    }
+    @Test
+    public void moveDownEasyDifficulty() {
+        Player p = Player.getPlayer("player", 0, 0);
+        PlayerMovement.setTestCase(true);
+        ActiveSub.setG1Active(true);
+        ActiveSub.setPlayer(p);
+        ActiveSub.initializePlayer();
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 100, 1);
+        p.moveDir(2);
+        assertEquals(p.getPlayerY(), 130, 1);
+        assertEquals(p.getPlayerX(), 100, 1);
+        p.resetPlayer();
+    }
+    @Test
+    public void moveLeftEasyDifficulty() {
+        Player p = Player.getPlayer("player", 0, 0);
+        PlayerMovement.setTestCase(true);
+        ActiveSub.setG1Active(true);
+        ActiveSub.setPlayer(p);
+        ActiveSub.initializePlayer();
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 100, 1);
+        p.moveDir(3);
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 70, 1);
         p.resetPlayer();
     }
     @Test
@@ -54,6 +82,34 @@ public class S3UnitTests {
         p.moveDir(2);
         assertEquals(p.getPlayerY(), 115, 1);
         assertEquals(p.getPlayerX(), 100, 1);
+        p.resetPlayer();
+    }
+    @Test
+    public void moveRightMediumDifficulty() {
+        Player p = Player.getPlayer("PlayerTest", 0, 1);
+        PlayerMovement.setTestCase(true);
+        ActiveSub.setG1Active(true);
+        ActiveSub.setPlayer(p);
+        ActiveSub.initializePlayer();
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 100, 1);
+        p.moveDir(1);
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 115, 1);
+        p.resetPlayer();
+    }
+    @Test
+    public void moveLeftMediumDifficulty() {
+        Player p = Player.getPlayer("PLayerTest", 0, 1);
+        PlayerMovement.setTestCase(true);
+        ActiveSub.setG1Active(true);
+        ActiveSub.setPlayer(p);
+        ActiveSub.initializePlayer();
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 100, 1);
+        p.moveDir(3);
+        assertEquals(p.getPlayerY(), 100, 1);
+        assertEquals(p.getPlayerX(), 85, 1);
         p.resetPlayer();
     }
     @Test
@@ -79,11 +135,12 @@ public class S3UnitTests {
         ActiveSub.initializePlayer();
         assertEquals(p.getPlayerY(), 100, 1);
         assertEquals(p.getPlayerX(), 100, 1);
-        p.moveDir(3);
+        p.moveDir(1);
         assertEquals(p.getPlayerY(), 100, 1);
         assertEquals(p.getPlayerX(), 110, 1);
         p.resetPlayer();
     }
+
     @Test
     public void moveUpHardDifficulty() {
         Player p = Player.getPlayer("divya2", 0, 2);
@@ -97,4 +154,5 @@ public class S3UnitTests {
         assertEquals(p.getPlayerY(), 90, 1);
         assertEquals(p.getPlayerX(), 100, 1);
         p.resetPlayer();
+    }
 }
