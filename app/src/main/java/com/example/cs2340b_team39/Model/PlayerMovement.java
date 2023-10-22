@@ -9,6 +9,7 @@ import com.example.cs2340b_team39.View.GameActivityMap3;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class PlayerMovement implements Movement {
+    private static boolean testCase;
     @Override
     public void moveDown(int speed) {
         Player.getPlayer().setPlayerY(Player.getPlayer().getPlayerY() + speed);
@@ -41,6 +42,9 @@ public class PlayerMovement implements Movement {
         }
     }
     public boolean checkCollisions() {
+        if (testCase) {
+            return false;
+        }
         int map = ViewModel.checkMap();
         if (map == 1) {
             if (Player.getPlayer().getPlayerX() <= 5) {
@@ -106,5 +110,8 @@ public class PlayerMovement implements Movement {
             }
         }
         return false;
+    }
+    public static void setTestCase(boolean t) {
+        testCase = t;
     }
 }
