@@ -23,7 +23,7 @@ public class Player {
         this.characterId = characterId;
         this.score = new Score();
         this.move = new PlayerMovement();
-        this.speed = (int) (20 / (difficulty + 1));
+        this.speed = (int) (30 / (difficulty + 1));
     }
 
     /*

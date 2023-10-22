@@ -24,7 +24,7 @@ public class S3UnitTests {
         assertEquals(p.getPlayerX(), 100, 1);
         p.moveDir(1);
         assertEquals(p.getPlayerY(), 100, 1);
-        assertEquals(p.getPlayerX(), 120, 1);
+        assertEquals(p.getPlayerX(), 130, 1);
     }
     @Test
     public void moveUp() {
@@ -35,7 +35,7 @@ public class S3UnitTests {
         assertEquals(p.getPlayerY(), 100, 1);
         assertEquals(p.getPlayerX(), 100, 1);
         p.moveDir(0);
-        assertEquals(p.getPlayerY(), 80, 1);
+        assertEquals(p.getPlayerY(), 70, 1);
         assertEquals(p.getPlayerX(), 100, 1);
     }
 }

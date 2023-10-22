@@ -35,6 +35,15 @@ public class ActiveSub implements SubPlayerPos {
     public static void setG3Active(boolean active) {
         G3Active = active;
     }
+    public static boolean getG1Active() {
+        return G1Active;
+    }
+    public static boolean getG2Active() {
+        return G2Active;
+    }
+    public static boolean getG3Active() {
+        return G3Active;
+    }
     public static void setPlayerImage(ImageView p) {
         player = p;
     }
