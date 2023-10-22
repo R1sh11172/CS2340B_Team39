@@ -16,12 +16,26 @@
 
 
         <TextView
+            android:id="@+id/scoreDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginBottom="500dp"
+            android:text="0"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <TextView
             android:id="@+id/nameDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="129dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginEnd="200dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="150dp"
             android:text="TextView"
             android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="parent"
@@ -33,10 +47,9 @@
             android:id="@+id/difficultyDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="127dp"
-            android:layout_marginTop="315dp"
-            android:layout_marginEnd="202dp"
-            android:layout_marginBottom="75dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="325dp"
+            android:layout_marginEnd="150dp"
             android:text="TextView"
             android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="parent"
@@ -48,10 +61,9 @@
             android:id="@+id/healthDisplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="129dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginEnd="200dp"
-            android:layout_marginBottom="22dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginEnd="150dp"
             android:text="TextView"
             android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="parent"
@@ -63,19 +75,17 @@
             android:id="@+id/nextmap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="124dp"
-            android:layout_marginEnd="175dp"
-            android:layout_marginBottom="150dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="550dp"
+            android:layout_marginEnd="150dp"
             android:text="Next Map"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/difficultyDisplay"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView30"
+            android:id="@+id/imageView1"
             android:layout_width="210dp"
             android:layout_height="105dp"
             android:layout_marginTop="336dp"
@@ -86,7 +96,7 @@
             app:srcCompat="@drawable/stairs_top" />
 
         <ImageView
-            android:id="@+id/imageView34"
+            android:id="@+id/imageView2"
             android:layout_width="210dp"
             android:layout_height="105dp"
             android:layout_marginTop="336dp"
@@ -95,7 +105,7 @@
             app:srcCompat="@drawable/stairs_top" />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/imageView3"
             android:layout_width="210dp"
             android:layout_height="105dp"
             android:layout_marginTop="231dp"
@@ -105,37 +115,7 @@
             app:srcCompat="@drawable/stairs_top" />
 
         <ImageView
-            android:id="@+id/imageView42"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="344dp"
-            android:layout_marginEnd="268dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/chest_golden_closed" />
-
-        <ImageView
-            android:id="@+id/imageView43"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="384dp"
-            android:layout_marginEnd="116dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/chest_golden_closed" />
-
-        <ImageView
-            android:id="@+id/imageView44"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="260dp"
-            android:layout_marginEnd="120dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/chest_golden_closed" />
-
-        <ImageView
-            android:id="@+id/imageView45"
+            android:id="@+id/imageView4"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="380dp"
@@ -145,7 +125,7 @@
             app:srcCompat="@drawable/door_closed" />
 
         <ImageView
-            android:id="@+id/imageView36"
+            android:id="@+id/imageView5"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="380dp"
@@ -155,7 +135,37 @@
             app:srcCompat="@drawable/door_closed" />
 
         <ImageView
-            android:id="@+id/imageView50"
+            android:id="@+id/imageView6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="344dp"
+            android:layout_marginEnd="268dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chest_golden_closed" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="372dp"
+            android:layout_marginEnd="108dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chest_golden_closed" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="244dp"
+            android:layout_marginEnd="140dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chest_golden_closed" />
+
+        <ImageView
+            android:id="@+id/imageView10"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -165,7 +175,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView51"
+            android:id="@+id/imageView11"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -175,7 +185,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView52"
+            android:id="@+id/imageView12"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -185,7 +195,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView53"
+            android:id="@+id/imageView13"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -195,7 +205,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView54"
+            android:id="@+id/imageView14"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -205,7 +215,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView55"
+            android:id="@+id/imageView15"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -215,7 +225,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView56"
+            android:id="@+id/imageView16"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -225,7 +235,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView57"
+            android:id="@+id/imageView17"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -235,7 +245,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView58"
+            android:id="@+id/imageView18"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -245,7 +255,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView59"
+            android:id="@+id/imageView19"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -255,7 +265,7 @@
             app:srcCompat="@drawable/wall_inner" />
 
         <ImageView
-            android:id="@+id/imageView60"
+            android:id="@+id/imageView20"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="410dp"
@@ -264,28 +274,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/wall_inner" />
 
-        <ImageView
-            android:id="@+id/imageView61"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="296dp"
-            android:layout_marginEnd="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_missing_brick_2" />
 
         <ImageView
-            android:id="@+id/imageView62"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="296dp"
-            android:layout_marginEnd="40dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_missing_brick_2" />
-
-        <ImageView
-            android:id="@+id/imageView63"
+            android:id="@+id/imageView21"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="296dp"
@@ -295,7 +286,7 @@
             app:srcCompat="@drawable/wall_missing_brick_2" />
 
         <ImageView
-            android:id="@+id/imageView64"
+            android:id="@+id/imageView22"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="296dp"
@@ -305,147 +296,7 @@
             app:srcCompat="@drawable/wall_missing_brick_2" />
 
         <ImageView
-            android:id="@+id/imageView65"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="191dp"
-            android:layout_marginEnd="270dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_missing_brick_2" />
-
-        <ImageView
-            android:id="@+id/imageView66"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="191dp"
-            android:layout_marginEnd="230dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_missing_brick_2" />
-
-        <ImageView
-            android:id="@+id/imageView67"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="191dp"
-            android:layout_marginEnd="190dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_missing_brick_2" />
-
-        <ImageView
-            android:id="@+id/imageView68"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="191dp"
-            android:layout_marginEnd="150dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_missing_brick_2" />
-
-        <ImageView
-            android:id="@+id/imageView69"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="191dp"
-            android:layout_marginEnd="110dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_missing_brick_2" />
-
-        <ImageView
-            android:id="@+id/imageView70"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="191dp"
-            android:layout_marginEnd="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_missing_brick_2" />
-
-        <ImageView
-            android:id="@+id/imageView72"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="191dp"
-            android:layout_marginEnd="281dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_outer_se" />
-
-        <ImageView
-            android:id="@+id/imageView73"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="231dp"
-            android:layout_marginEnd="281dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_outer_se" />
-
-        <ImageView
-            android:id="@+id/imageView74"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="271dp"
-            android:layout_marginEnd="281dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_outer_se" />
-
-        <ImageView
-            android:id="@+id/imageView75"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="296dp"
-            android:layout_marginEnd="281dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_outer_se" />
-
-        <ImageView
-            android:id="@+id/imageView76"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="191dp"
-            android:layout_marginEnd="89dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_outer_sw" />
-
-        <ImageView
-            android:id="@+id/imageView77"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="231dp"
-            android:layout_marginEnd="89dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_outer_sw" />
-
-        <ImageView
-            android:id="@+id/imageView78"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="271dp"
-            android:layout_marginEnd="89dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_outer_sw" />
-
-        <ImageView
-            android:id="@+id/imageView79"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="296dp"
-            android:layout_marginEnd="89dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/wall_outer_sw" />
-
-        <ImageView
-            android:id="@+id/imageView80"
+            android:id="@+id/imageView23"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="296dp"
@@ -455,7 +306,67 @@
             app:srcCompat="@drawable/wall_missing_brick_2" />
 
         <ImageView
-            android:id="@+id/imageView81"
+            android:id="@+id/imageView24"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginEnd="270dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_missing_brick_2" />
+
+        <ImageView
+            android:id="@+id/imageView25"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginEnd="230dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_missing_brick_2" />
+
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginEnd="190dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_missing_brick_2" />
+
+        <ImageView
+            android:id="@+id/imageView27"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginEnd="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_missing_brick_2" />
+
+        <ImageView
+            android:id="@+id/imageView28"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginEnd="110dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_missing_brick_2" />
+
+        <ImageView
+            android:id="@+id/imageView29"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_missing_brick_2" />
+
+        <ImageView
+            android:id="@+id/imageView30"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginTop="296dp"
@@ -464,43 +375,129 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/wall_missing_brick_2" />
 
+        <ImageView
+            android:id="@+id/imageView31"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="296dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_missing_brick_2" />
+
+        <ImageView
+            android:id="@+id/imageView32"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="296dp"
+            android:layout_marginEnd="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_missing_brick_2" />
+
+        <ImageView
+            android:id="@+id/imageView33"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginEnd="281dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_outer_se" />
+
+        <ImageView
+            android:id="@+id/imageView34"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="231dp"
+            android:layout_marginEnd="281dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_outer_se" />
+
+        <ImageView
+            android:id="@+id/imageView35"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="271dp"
+            android:layout_marginEnd="281dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_outer_se" />
+
+        <ImageView
+            android:id="@+id/imageView36"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="296dp"
+            android:layout_marginEnd="281dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_outer_se" />
+
+        <ImageView
+            android:id="@+id/imageView37"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="191dp"
+            android:layout_marginEnd="89dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_outer_sw" />
+
+        <ImageView
+            android:id="@+id/imageView38"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="231dp"
+            android:layout_marginEnd="89dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_outer_sw" />
+
+        <ImageView
+            android:id="@+id/imageView39"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="271dp"
+            android:layout_marginEnd="89dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_outer_sw" />
+
+        <ImageView
+            android:id="@+id/imageView40"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="296dp"
+            android:layout_marginEnd="89dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wall_outer_sw" />
+
+        <ImageView
+            android:id="@+id/imageView46"
+            android:layout_width="33dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="364dp"
+            android:layout_marginEnd="180dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/monster_dark_knight" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="365dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/scoreDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="235dp"
-        android:layout_marginBottom="285dp"
-        android:text="0"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/nameDisplay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-
-    <ImageView
-        android:id="@+id/imageView46"
-        android:layout_width="33dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="372dp"
-        android:layout_marginEnd="164dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/monster_dark_knight" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="39dp"
-        android:layout_height="20dp"
-        tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="410dp"
-        tools:srcCompat="@drawable/npc_wizzard" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
