@@ -97,4 +97,5 @@ public class S3UnitTests {
         assertEquals(p.getPlayerY(), 90, 1);
         assertEquals(p.getPlayerX(), 100, 1);
         p.resetPlayer();
+    }
 }
