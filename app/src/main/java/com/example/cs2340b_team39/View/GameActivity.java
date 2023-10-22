@@ -2,6 +2,7 @@ package com.example.cs2340b_team39.View;
 
 import android.content.Intent;
 //import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 public class GameActivity extends AppCompatActivity {
     private static Player player;
     private static ImageView sprite;
+    private static ImageView leftC, rightC, top, bottom;
     private static int screenWidth, screenHeight;
 
     @Override
@@ -42,6 +44,10 @@ public class GameActivity extends AppCompatActivity {
 //        Button nextMap = findViewById(R.id.nextmap);
         //Button endButton = findViewById(R.id.button);
         sprite = findViewById(R.id.imageView);
+        leftC = findViewById(R.id.imageView36);
+        rightC = findViewById(R.id.imageView40);
+        top = findViewById(R.id.imageView26);
+        bottom = findViewById(R.id.imageView15);
         int spriteChoice = ConfigActivity.getSprite();
         switch (spriteChoice) {
         case 0:
@@ -96,5 +102,17 @@ public class GameActivity extends AppCompatActivity {
             startActivity(nextIntent);
         }
         return true;
+    }
+    public static ImageView getLeftC() {
+        return leftC;
+    }
+    public static ImageView getRightC() {
+        return rightC;
+    }
+    public static ImageView getTop() {
+        return top;
+    }
+    public static ImageView getBottom() {
+        return bottom;
     }
 }

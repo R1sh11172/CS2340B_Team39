@@ -36,6 +36,16 @@ public class ViewModel {
         Player.getPlayer().moveDir(dir);
         ActiveSub.updatePlayerPos();
     }
+    public static int checkMap() {
+        if (ActiveSub.getG1Active()) {
+            return 1;
+        } else if (ActiveSub.getG2Active()) {
+            return 2;
+        } else if (ActiveSub.getG3Active()) {
+            return 3;
+        }
+        return 0;
+    }
 }
 
 

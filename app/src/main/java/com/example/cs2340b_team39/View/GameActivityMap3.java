@@ -18,6 +18,7 @@ public class GameActivityMap3 extends AppCompatActivity {
     private Player player = Player.getPlayer();
     //private boolean active = false;
     private static ImageView sprite;
+    private static ImageView top, bottom, leftC;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,9 @@ public class GameActivityMap3 extends AppCompatActivity {
 //        Button endButton = findViewById(R.id.button);
         //Button nextMap = findViewById(R.id.nextmap);
         sprite = findViewById(R.id.imageView);
+        top = findViewById(R.id.imageView30);
+        bottom = findViewById(R.id.imageView16);
+        leftC = findViewById(R.id.imageView39);
         int spriteChoice = ConfigActivity.getSprite();
         switch (spriteChoice) {
         case 0:
@@ -83,5 +87,14 @@ public class GameActivityMap3 extends AppCompatActivity {
     }
     public static ImageView getSprite() {
         return sprite;
+    }
+    public static ImageView getLeftC() {
+        return leftC;
+    }
+    public static ImageView getTop() {
+        return top;
+    }
+    public static ImageView getBottom() {
+        return bottom;
     }
 }
