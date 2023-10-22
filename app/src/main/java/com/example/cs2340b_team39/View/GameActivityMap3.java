@@ -30,7 +30,7 @@ public class GameActivityMap3 extends AppCompatActivity {
         health.setText("Health: " + player.getHealth() + "");
         player.getScore().setTextView(score);
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
-        Button endButton = findViewById(R.id.button);
+//        Button endButton = findViewById(R.id.button);
         //Button nextMap = findViewById(R.id.nextmap);
         sprite = findViewById(R.id.imageView);
         int spriteChoice = ConfigActivity.getSprite();
@@ -54,11 +54,11 @@ public class GameActivityMap3 extends AppCompatActivity {
         //            Intent nextIntent = new Intent(GameActivityMap3.this, GameActivity.class);
         //            startActivity(nextIntent);
         //        });
-        endButton.setOnClickListener(v -> {
-            Intent endIntent = new Intent(GameActivityMap3.this, EndActivity.class);
-            ActiveSub.setG3Active(false);
-            startActivity(endIntent);
-        });
+//        endButton.setOnClickListener(v -> {
+//            Intent endIntent = new Intent(GameActivityMap3.this, EndActivity.class);
+//            ActiveSub.setG3Active(false);
+//            startActivity(endIntent);
+//        });
 
     }
     @Override
@@ -74,6 +74,11 @@ public class GameActivityMap3 extends AppCompatActivity {
             ViewModel.updatePlayerPosition(2);
         }
         //checkCollisions();
+        if (player.getPlayerX() > 900 && player.getPlayerX() < 1000 && player.getPlayerY() > 600 && player.getPlayerY() < 700) {
+            Intent endIntent = new Intent(GameActivityMap3.this, EndActivity.class);
+            ActiveSub.setG3Active(false);
+            startActivity(endIntent);
+        }
         return true;
     }
     public static ImageView getSprite() {
