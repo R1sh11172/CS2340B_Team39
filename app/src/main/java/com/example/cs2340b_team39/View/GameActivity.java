@@ -18,11 +18,13 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class GameActivity extends AppCompatActivity {
     private static Player player;
+    private static ImageView sprite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_state);
+        ActiveSub.setG1Active(true);
         TextView name = findViewById(R.id.nameDisplay);
         TextView health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
@@ -35,7 +37,7 @@ public class GameActivity extends AppCompatActivity {
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         Button nextMap = findViewById(R.id.nextmap);
         //Button endButton = findViewById(R.id.button);
-        ImageView sprite = findViewById(R.id.imageView);
+        sprite = findViewById(R.id.imageView);
         int spriteChoice = ConfigActivity.getSprite();
         switch (spriteChoice) {
         case 0:
@@ -52,6 +54,7 @@ public class GameActivity extends AppCompatActivity {
         }
         nextMap.setOnClickListener(v -> {
             Intent nextIntent = new Intent(GameActivity.this, GameActivityMap2.class);
+            ActiveSub.setG1Active(false);
             startActivity(nextIntent);
         });
         //        endButton.setOnClickListener(v -> {
@@ -59,4 +62,8 @@ public class GameActivity extends AppCompatActivity {
         //            startActivity(endIntent);
         //        });
     }
+    public static ImageView getSprite() {
+        return sprite;
+    }
+
 }
