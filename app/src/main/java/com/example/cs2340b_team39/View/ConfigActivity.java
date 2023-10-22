@@ -85,6 +85,8 @@ public class ConfigActivity extends AppCompatActivity {
     public static int getSprite() {
         return sprite;
     }
-
+    public static void setSprite(int s) {
+        sprite = s;
+    }
 
 }

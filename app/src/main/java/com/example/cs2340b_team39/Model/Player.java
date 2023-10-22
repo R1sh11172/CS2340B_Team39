@@ -11,6 +11,7 @@ public class Player {
     // private Ability ability;
     private Score score;
     private int characterId;
+    private int speed;
     private float playerX, playerY;
     private static volatile Player player;
     private PlayerMovement move;
@@ -22,6 +23,7 @@ public class Player {
         this.characterId = characterId;
         this.score = new Score();
         this.move = new PlayerMovement();
+        this.speed = (int) (20 / (difficulty + 1));
     }
 
     /*
@@ -39,7 +41,26 @@ public class Player {
         }
         return player;
     }
+    //Move dir: 0 is up, 1 is right, 2 is down, 3 is left
+    public void moveDir(int dir) {
+        switch (dir) {
+        case 0:
+            move.moveUp(speed);
+            break;
+        case 1:
+            move.moveRight(speed);
+            break;
+        case 2:
+            move.moveDown(speed);
+            break;
+        case 3:
+            move.moveLeft(speed);
+            break;
 
+        default:
+            break;
+        }
+    }
     public static Player getPlayer() {
         return player;
     }
@@ -75,6 +96,9 @@ public class Player {
     }
     public void setPlayerY(float y) {
         playerY = y;
+    }
+    public int getSpeed() {
+        return speed;
     }
     public PlayerMovement getPlayerMovement() {
         return move;
