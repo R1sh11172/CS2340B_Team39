@@ -32,7 +32,7 @@ public class GameActivityMap2 extends AppCompatActivity {
         player.getScore().setTextView(score);
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         //Button endButton = findViewById(R.id.button);
-        Button nextMap = findViewById(R.id.nextmap);
+//        Button nextMap = findViewById(R.id.nextmap);
         sprite = findViewById(R.id.imageView);
         bottom = findViewById(R.id.imageView16);
         top = findViewById(R.id.imageView26);
@@ -52,11 +52,11 @@ public class GameActivityMap2 extends AppCompatActivity {
         }
         ActiveSub.setG2Active(true);
         ActiveSub.initializePlayer();
-        nextMap.setOnClickListener(v -> {
-            Intent nextIntent = new Intent(GameActivityMap2.this, GameActivityMap3.class);
-            ActiveSub.setG2Active(false);
-            startActivity(nextIntent);
-        });
+//        nextMap.setOnClickListener(v -> {
+//            Intent nextIntent = new Intent(GameActivityMap2.this, GameActivityMap3.class);
+//            ActiveSub.setG2Active(false);
+//            startActivity(nextIntent);
+//        });
         //        endButton.setOnClickListener(v -> {
         //            Intent endIntent = new Intent(GameActivityMap2.this, EndActivity.class);
         //            startActivity(endIntent);
@@ -75,6 +75,11 @@ public class GameActivityMap2 extends AppCompatActivity {
             ViewModel.updatePlayerPosition(2);
         }
         //checkCollisions();
+        if (player.getPlayerX() > 900 && player.getPlayerX() < 1000 && player.getPlayerY() > 650 && player.getPlayerY() < 750) {
+            Intent nextIntent = new Intent(GameActivityMap2.this, GameActivityMap3.class);
+            ActiveSub.setG2Active(false);
+            startActivity(nextIntent);
+        }
         return true;
     }
     public static ImageView getSprite() {
