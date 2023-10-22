@@ -10,6 +10,7 @@ import com.example.cs2340b_team39.Model.Model;
 import com.example.cs2340b_team39.Model.Player;
 import com.example.cs2340b_team39.Model.PlayerMovement;
 import com.example.cs2340b_team39.Model.Score;
+import com.example.cs2340b_team39.View.ActiveSub;
 import com.example.cs2340b_team39.View.GameActivity;
 import com.example.cs2340b_team39.View.SubPlayerPos;
 
@@ -31,8 +32,9 @@ public class ViewModel {
         Score score = Player.getPlayer().getScore();
         score.setTextView(scoreCount);
     }
-    public static void updatePlayerPosition() {
-
+    public static void updatePlayerPosition(int dir) {
+        Player.getPlayer().moveDir(dir);
+        ActiveSub.updatePlayerPos();
     }
 }
 

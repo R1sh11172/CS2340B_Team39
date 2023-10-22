@@ -3,6 +3,8 @@ package com.example.cs2340b_team39.View;
 import android.content.Intent;
 //import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.Button;
 //import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,12 +21,14 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 public class GameActivity extends AppCompatActivity {
     private static Player player;
     private static ImageView sprite;
+    private static int screenWidth, screenHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_state);
-        ActiveSub.setG1Active(true);
+        screenWidth = getResources().getDisplayMetrics().widthPixels;
+        screenHeight = getResources().getDisplayMetrics().heightPixels;
         TextView name = findViewById(R.id.nameDisplay);
         TextView health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
@@ -52,6 +56,8 @@ public class GameActivity extends AppCompatActivity {
         default:
             break;
         }
+        ActiveSub.setG1Active(true);
+        ActiveSub.initializePlayer();
         nextMap.setOnClickListener(v -> {
             Intent nextIntent = new Intent(GameActivity.this, GameActivityMap2.class);
             ActiveSub.setG1Active(false);
@@ -65,5 +71,25 @@ public class GameActivity extends AppCompatActivity {
     public static ImageView getSprite() {
         return sprite;
     }
-
+    public static int getWidth() {
+        return screenWidth;
+    }
+    public static int getHeight() {
+        return screenHeight;
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // logic to move the player (remember to check collisions)
+        if (keyCode == KeyEvent.KEYCODE_D) {
+            ViewModel.updatePlayerPosition(1);
+        } else if (keyCode == KeyEvent.KEYCODE_A) {
+            ViewModel.updatePlayerPosition(3);
+        } else if (keyCode == KeyEvent.KEYCODE_W) {
+            ViewModel.updatePlayerPosition(0);
+        } else if (keyCode == KeyEvent.KEYCODE_S) {
+            ViewModel.updatePlayerPosition(2);
+        }
+        //checkCollisions();
+        return true;
+    }
 }
