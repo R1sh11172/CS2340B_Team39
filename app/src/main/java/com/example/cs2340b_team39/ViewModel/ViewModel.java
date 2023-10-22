@@ -1,11 +1,17 @@
 package com.example.cs2340b_team39.ViewModel;
 
+import android.app.Activity;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cs2340b_team39.Model.Leaderboard;
 import com.example.cs2340b_team39.Model.Model;
 import com.example.cs2340b_team39.Model.Player;
+import com.example.cs2340b_team39.Model.PlayerMovement;
 import com.example.cs2340b_team39.Model.Score;
+import com.example.cs2340b_team39.View.GameActivity;
+import com.example.cs2340b_team39.View.SubPlayerPos;
 
 public class ViewModel {
     public static boolean validateCredentials(String name, int difficulty, int character) {
@@ -24,6 +30,9 @@ public class ViewModel {
     public static void changeScoreId(TextView scoreCount) {
         Score score = Player.getPlayer().getScore();
         score.setTextView(scoreCount);
+    }
+    public static void updatePlayerPosition() {
+
     }
 }
 

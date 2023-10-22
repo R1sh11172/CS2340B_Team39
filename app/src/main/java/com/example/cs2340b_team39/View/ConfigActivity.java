@@ -16,10 +16,12 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class ConfigActivity extends AppCompatActivity {
     private static int sprite;
+    private boolean active;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuration);
+        active = true;
         Button startGame = findViewById(R.id.startgame);
         TextView configureError = findViewById(R.id.textView7);
         configureError.setVisibility(View.INVISIBLE);
@@ -67,6 +69,7 @@ public class ConfigActivity extends AppCompatActivity {
                 ViewModel.createPlayer(String.valueOf(name.getText()), characterId, difficulty);
                 Intent game = new Intent(ConfigActivity.this, GameActivity.class);
                 sprite = characterId;
+                active = false;
                 startActivity(game);
                 //finish();
             } else {
@@ -82,5 +85,6 @@ public class ConfigActivity extends AppCompatActivity {
     public static int getSprite() {
         return sprite;
     }
+
 
 }

@@ -14,10 +14,13 @@ import com.example.cs2340b_team39.R;
 
 public class GameActivityMap3 extends AppCompatActivity {
     private Player player = Player.getPlayer();
+    //private boolean active = false;
+    private static ImageView sprite;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamestatemap3);
+        ActiveSub.setG3Active(true);
         TextView name = findViewById(R.id.nameDisplay);
         TextView health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
@@ -28,7 +31,7 @@ public class GameActivityMap3 extends AppCompatActivity {
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         Button endButton = findViewById(R.id.button);
         //Button nextMap = findViewById(R.id.nextmap);
-        ImageView sprite = findViewById(R.id.imageView);
+        sprite = findViewById(R.id.imageView);
         int spriteChoice = ConfigActivity.getSprite();
         switch (spriteChoice) {
         case 0:
@@ -50,7 +53,12 @@ public class GameActivityMap3 extends AppCompatActivity {
         //        });
         endButton.setOnClickListener(v -> {
             Intent endIntent = new Intent(GameActivityMap3.this, EndActivity.class);
+            ActiveSub.setG3Active(false);
             startActivity(endIntent);
         });
+
+    }
+    public static ImageView getSprite() {
+        return sprite;
     }
 }
