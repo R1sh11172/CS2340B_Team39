@@ -100,6 +100,9 @@ public class Player {
     public int getSpeed() {
         return speed;
     }
+    public void setHealth(double health) {
+        this.health = health;
+    }
     public PlayerMovement getPlayerMovement() {
         return move;
     }

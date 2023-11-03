@@ -17,14 +17,15 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 public class GameActivityMap2 extends AppCompatActivity {
     private Player player = Player.getPlayer();
     //private boolean active;
-    public static ImageView sprite;
-    public static ImageView bottom, top;
+    private static ImageView sprite;
+    private static ImageView bottom, top;
+    private static TextView health;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamestatemap2);
         TextView name = findViewById(R.id.nameDisplay);
-        TextView health = findViewById(R.id.healthDisplay);
+        health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
         TextView score = findViewById(R.id.scoreDisplay);
         name.setText("Name: " + player.getName());
@@ -90,5 +91,8 @@ public class GameActivityMap2 extends AppCompatActivity {
     }
     public static ImageView getBottom() {
         return bottom;
+    }
+    public static void setHealth(double healthVal) {
+        health.setText("Health: " + healthVal);
     }
 }
