@@ -19,12 +19,13 @@ public class GameActivityMap3 extends AppCompatActivity {
     //private boolean active = false;
     private static ImageView sprite;
     private static ImageView top, bottom, leftC;
+    private static TextView health;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamestatemap3);
         TextView name = findViewById(R.id.nameDisplay);
-        TextView health = findViewById(R.id.healthDisplay);
+        health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
         TextView score = findViewById(R.id.scoreDisplay);
         name.setText("Name: " + player.getName());
@@ -96,5 +97,8 @@ public class GameActivityMap3 extends AppCompatActivity {
     }
     public static ImageView getBottom() {
         return bottom;
+    }
+    public static void setHealth(double healthVal) {
+        health.setText("Health: " + healthVal);
     }
 }

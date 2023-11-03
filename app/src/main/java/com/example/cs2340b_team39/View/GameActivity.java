@@ -24,6 +24,7 @@ public class GameActivity extends AppCompatActivity {
     private static ImageView sprite;
     private static ImageView leftC, rightC, top, bottom;
     private static int screenWidth, screenHeight;
+    private static TextView health;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class GameActivity extends AppCompatActivity {
         screenWidth = getResources().getDisplayMetrics().widthPixels;
         screenHeight = getResources().getDisplayMetrics().heightPixels;
         TextView name = findViewById(R.id.nameDisplay);
-        TextView health = findViewById(R.id.healthDisplay);
+        health = findViewById(R.id.healthDisplay);
         TextView difficulty = findViewById(R.id.difficultyDisplay);
         TextView score = findViewById(R.id.scoreDisplay);
         player = Player.getPlayer();
@@ -114,5 +115,8 @@ public class GameActivity extends AppCompatActivity {
     }
     public static ImageView getBottom() {
         return bottom;
+    }
+    public static void setHealth(double healthVal) {
+        health.setText("Health: " + healthVal);
     }
 }

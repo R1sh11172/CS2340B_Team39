@@ -18,7 +18,32 @@ public class CollisionSub {
         }
         return collisionSub;
     }
-
+    public void checkPECollision() {
+        player = Player.getPlayer();
+        for (int i = 0; i < enemies.size(); i++) {
+            double enemyX = enemies.get(i).getX();
+            double enemyY = enemies.get(i).getY();
+            double playerX = player.getPlayerX();
+            double playerY = player.getPlayerY();
+            double enemySize = enemies.get(i).getSize();
+            boolean collide = false;
+            if (playerX >= enemyX && playerX <= enemyX + enemySize) {
+                collide = true;
+            }
+            if (playerX + 16 >= enemyX && playerX + 16 <= enemyX + enemySize) {
+                collide = true;
+            }
+            if (playerY >= enemyY && playerY <= enemyY + enemySize) {
+                collide = true;
+            }
+            if (playerY + 16 >= enemyY && playerY + 16 <= enemyY + 16) {
+                collide = true;
+            }
+            if (collide) {
+                player.setHealth(player.getHealth() - enemies.get(i).getDamage());
+            }
+        }
+    }
     public void addEnemy(Enemy enemy) {
         enemies.add(enemy);
     }

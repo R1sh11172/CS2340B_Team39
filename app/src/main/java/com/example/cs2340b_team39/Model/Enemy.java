@@ -1,11 +1,12 @@
 package com.example.cs2340b_team39.Model;
 
-public class Enemy {
+public abstract class Enemy {
     private double health;
     private double speed;
     private double damage;
     private double size;
-    private double x, y;
+    private double x;
+    private double y;
     private EnemyMovement movement;
     public void setX(double x) {
         this.x = x;
@@ -18,5 +19,11 @@ public class Enemy {
     }
     public double getY() {
         return y;
+    }
+    public double getDamage() {
+        return damage;
+    }
+    public double getSize() {
+        return size;
     }
 }

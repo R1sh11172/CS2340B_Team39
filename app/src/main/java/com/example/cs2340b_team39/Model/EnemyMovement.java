@@ -9,33 +9,39 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class EnemyMovement implements Movement {
     public Enemy enemy;
+
     public EnemyMovement(Enemy e) {
         this.enemy = e;
     }
+
     public void moveLeft(int speed) {
         enemy.setX(enemy.getX() - speed);
         if (checkCollisions()) {
             enemy.setX(enemy.getX() + speed);
         }
     }
+
     public void moveRight(int speed) {
         enemy.setX(enemy.getX() + speed);
         if (checkCollisions()) {
             enemy.setX(enemy.getX() - speed);
         }
     }
+
     public void moveUp(int speed) {
         enemy.setY(enemy.getY() - speed);
         if (checkCollisions()) {
             enemy.setY(enemy.getY() + speed);
         }
     }
+
     public void moveDown(int speed) {
         enemy.setY(enemy.getY() + speed);
         if (checkCollisions()) {
             enemy.setY(enemy.getY() - speed);
         }
     }
+
     public boolean checkCollisions() {
         //if (testCase) {
         //    return false;
@@ -104,7 +110,7 @@ public class EnemyMovement implements Movement {
                 return true;
             }
         }
-        CollisionSub.getCollision();
+        CollisionSub.getCollision().checkPECollision();
         return false;
     }
 }
