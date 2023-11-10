@@ -26,4 +26,7 @@ public abstract class Enemy {
     public double getSize() {
         return size;
     }
+    public void movePattern() {
+        //Implement each enemy movement pattern here.
+    }
 }

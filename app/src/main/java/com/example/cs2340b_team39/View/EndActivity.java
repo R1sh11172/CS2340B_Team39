@@ -20,7 +20,12 @@ public class EndActivity extends AppCompatActivity {
         Leaderboard lb = Leaderboard.getLeaderboard();
         Player player = Player.getPlayer();
         player.getScore().setFinished(true);
-        ViewModel.updateScores();
+        TextView top = findViewById(R.id.textView8);
+        if (player.getHealth() > 0) {
+            ViewModel.updateScores();
+        } else {
+            top.setText("You Lost!");
+        }
         //lb.updateScores(player.getScore());
         Button resButton = findViewById(R.id.restart);
         TextView current = findViewById(R.id.current1);
