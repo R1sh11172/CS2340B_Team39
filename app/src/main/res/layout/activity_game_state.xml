@@ -476,16 +476,6 @@
             app:srcCompat="@drawable/wall_outer_sw" />
 
         <ImageView
-            android:id="@+id/imageView46"
-            android:layout_width="33dp"
-            android:layout_height="37dp"
-            android:layout_marginTop="364dp"
-            android:layout_marginEnd="180dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/monster_dark_knight" />
-
-        <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -496,6 +486,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="67dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="192dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/monster_elemental_gold_short"
+            tools:layout_editor_absoluteY="271dp" />
+
+        <ImageView
+            android:id="@+id/imageView44"
+            android:layout_width="83dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="356dp"
+            android:layout_marginEnd="160dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/monster_chort" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

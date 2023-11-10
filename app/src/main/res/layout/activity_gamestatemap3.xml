@@ -93,6 +93,16 @@
             app:srcCompat="@drawable/floor_plain" />
 
         <ImageView
+            android:id="@+id/imageView43"
+            android:layout_width="53dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="324dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/monster_elemental_gold_short" />
+
+        <ImageView
             android:id="@+id/imageView2"
             android:layout_width="210dp"
             android:layout_height="105dp"
@@ -461,6 +471,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageView42"
+            android:layout_width="57dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="288dp"
+            android:layout_marginEnd="156dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/monster_elemental_water" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
