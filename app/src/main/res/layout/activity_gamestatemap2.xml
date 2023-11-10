@@ -72,18 +72,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent" />
 
-<!--        <Button-->
-<!--            android:id="@+id/nextmap"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="150dp"-->
-<!--            android:layout_marginTop="550dp"-->
-<!--            android:layout_marginEnd="150dp"-->
-<!--            android:text="Next Map"-->
-<!--            app:layout_constraintBottom_toTopOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="parent" />-->
+        <!--        <Button-->
+        <!--            android:id="@+id/nextmap"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="150dp"-->
+        <!--            android:layout_marginTop="550dp"-->
+        <!--            android:layout_marginEnd="150dp"-->
+        <!--            android:text="Next Map"-->
+        <!--            app:layout_constraintBottom_toTopOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="parent" />-->
 
         <ImageView
             android:id="@+id/imageView1"
@@ -404,6 +404,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageView41"
+            android:layout_width="83dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginEnd="172dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/monster_chort" />
+
+        <ImageView
+            android:id="@+id/imageView47"
+            android:layout_width="83dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="352dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/monster_elemental_water" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
