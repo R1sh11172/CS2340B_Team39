@@ -109,6 +109,7 @@ public class PlayerMovement implements Movement {
                 return true;
             }
         }
+        CollisionSub.getCollision().checkPECollision();
         return false;
     }
     public static void setTestCase(boolean t) {
