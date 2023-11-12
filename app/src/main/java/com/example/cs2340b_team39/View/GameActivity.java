@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cs2340b_team39.Model.CollisionSub;
 import com.example.cs2340b_team39.Model.Difficulty;
 import com.example.cs2340b_team39.Model.Player;
 import com.example.cs2340b_team39.R;
@@ -21,7 +22,7 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class GameActivity extends AppCompatActivity {
     private static Player player;
-    private static ImageView sprite;
+    private static ImageView sprite, enemy1, enemy2;
     private static ImageView leftC, rightC, top, bottom;
     private static int screenWidth, screenHeight;
     private static TextView health;
@@ -44,6 +45,14 @@ public class GameActivity extends AppCompatActivity {
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
 //        Button nextMap = findViewById(R.id.nextmap);
         //Button endButton = findViewById(R.id.button);
+        enemy1 = findViewById(R.id.imageView9);
+        enemy2 = findViewById(R.id.imageView44);
+        enemy1.setX(300);
+        enemy1.setY(300);
+        double x1 = enemy1.getX();
+
+        ViewModel.initEnemy(enemy1, 1);
+        ViewModel.initEnemy(enemy2, 2);
         sprite = findViewById(R.id.imageView);
         leftC = findViewById(R.id.imageView36);
         rightC = findViewById(R.id.imageView40);
@@ -118,5 +127,12 @@ public class GameActivity extends AppCompatActivity {
     }
     public static void setHealth(double healthVal) {
         health.setText("Health: " + healthVal);
+    }
+    public void endGame() {
+        if (player.getHealth() <= 0) {
+            Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
+            ActiveSub.setG1Active(false);
+            startActivity(endIntent);
+        }
     }
 }

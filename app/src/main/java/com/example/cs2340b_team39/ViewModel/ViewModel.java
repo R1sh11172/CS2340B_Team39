@@ -1,10 +1,17 @@
 package com.example.cs2340b_team39.ViewModel;
 
 import android.app.Activity;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cs2340b_team39.Model.CollisionSub;
+import com.example.cs2340b_team39.Model.Enemy;
+import com.example.cs2340b_team39.Model.Enemy1;
+import com.example.cs2340b_team39.Model.Enemy2;
+import com.example.cs2340b_team39.Model.Enemy3;
+import com.example.cs2340b_team39.Model.Enemy4;
 import com.example.cs2340b_team39.Model.Leaderboard;
 import com.example.cs2340b_team39.Model.Model;
 import com.example.cs2340b_team39.Model.Player;
@@ -64,6 +71,27 @@ public class ViewModel {
         } else if (map == 3) {
             GameActivityMap3.setHealth(Player.getPlayer().getHealth());
         }
+    }
+
+    public static Enemy initEnemy(ImageView i, int type) {
+        Enemy e;
+        if (type == 1) {
+            e = new Enemy1(i);
+        } else if (type == 2) {
+            e = new Enemy2(i);
+        } else if (type == 3) {
+            e = new Enemy3(i);
+        } else if (type == 4) {
+            e = new Enemy4(i);
+        } else {
+            return null;
+        }
+        float scale = (float) e.getSize() / 20;
+        i.setScaleX(scale);
+        i.setScaleY(scale);
+
+        CollisionSub.getCollision().addEnemy(e);
+        return e;
     }
 }
 

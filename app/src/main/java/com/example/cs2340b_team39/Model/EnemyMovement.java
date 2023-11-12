@@ -13,6 +13,9 @@ public class EnemyMovement implements Movement {
     public EnemyMovement(Enemy e) {
         this.enemy = e;
     }
+    public EnemyMovement() {
+        enemy = null;
+    }
 
     public void moveLeft(int speed) {
         enemy.setX(enemy.getX() - speed);
@@ -112,5 +115,8 @@ public class EnemyMovement implements Movement {
         }
         CollisionSub.getCollision().checkPECollision();
         return false;
+    }
+    public void setEnemy(Enemy e) {
+        enemy = e;
     }
 }
