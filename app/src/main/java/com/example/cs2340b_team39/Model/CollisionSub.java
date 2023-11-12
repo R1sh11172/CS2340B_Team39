@@ -38,7 +38,7 @@ public class CollisionSub {
             if (playerY >= enemyY && playerY <= enemyY + enemySize) {
                 collide = true;
             }
-            if (playerY + 16 >= enemyY && playerY + 16 <= enemyY + enemySize) {
+            if ((playerY + 16) >= enemyY && (playerY + 16) <= (enemyY + enemySize)) {
                 collide = true;
             }
             if (collide) {

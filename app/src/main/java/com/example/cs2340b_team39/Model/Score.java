@@ -2,9 +2,14 @@ package com.example.cs2340b_team39.Model;
 
 import java.util.Calendar;
 import java.util.Date;
+
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
+import com.example.cs2340b_team39.View.ActiveSub;
+import com.example.cs2340b_team39.View.EndActivity;
+import com.example.cs2340b_team39.View.GameActivity;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class Score implements Comparable {
@@ -66,4 +71,6 @@ public class Score implements Comparable {
     public void setScore(int val) {
         score = val;
     }
+
+
 }
