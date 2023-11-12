@@ -1,6 +1,7 @@
 package com.example.cs2340b_team39.ViewModel;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ import com.example.cs2340b_team39.Model.Player;
 import com.example.cs2340b_team39.Model.PlayerMovement;
 import com.example.cs2340b_team39.Model.Score;
 import com.example.cs2340b_team39.View.ActiveSub;
+import com.example.cs2340b_team39.View.EndActivity;
 import com.example.cs2340b_team39.View.GameActivity;
 import com.example.cs2340b_team39.View.GameActivityMap2;
 import com.example.cs2340b_team39.View.GameActivityMap3;
@@ -92,6 +94,24 @@ public class ViewModel {
 
         CollisionSub.getCollision().addEnemy(e);
         return e;
+    }
+
+    public static void endGame() {
+////        double health = Player.getPlayer().getHealth();
+////        int map = checkMap();
+////        if (health > 0) {
+////            return;
+////        }
+////        if (map == 1) {
+////            GameActivity.terminateGame();
+////            ActiveSub.setG1Active(false);
+////        } else if (map == 2) {
+////            ActiveSub.setG2Active(false);
+////        } else if (map == 3) {
+////            Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
+////            ActiveSub.setG1Active(false);
+////            startActivity(endIntent);
+//        }
     }
 }
 

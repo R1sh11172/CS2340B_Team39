@@ -1,12 +1,10 @@
 package com.example.cs2340b_team39.View;
 
+import android.content.Context;
 import android.content.Intent;
 //import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.View;
-import android.widget.Button;
 //import android.widget.EditText;
 import android.widget.ImageView;
 //import android.widget.RadioGroup;
@@ -14,7 +12,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.cs2340b_team39.Model.CollisionSub;
 import com.example.cs2340b_team39.Model.Difficulty;
 import com.example.cs2340b_team39.Model.Player;
 import com.example.cs2340b_team39.R;
@@ -128,11 +125,10 @@ public class GameActivity extends AppCompatActivity {
     public static void setHealth(double healthVal) {
         health.setText("Health: " + healthVal);
     }
-    public void endGame() {
-        if (player.getHealth() <= 0) {
-            Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
-            ActiveSub.setG1Active(false);
-            startActivity(endIntent);
-        }
-    }
+
+//    public static void terminateGame(Context context) {
+//        Intent endIntent = new Intent(context, EndActivity.class);
+//        context.startActivity(endIntent);
+//        //startActivity(endIntent);
+//    }
 }
