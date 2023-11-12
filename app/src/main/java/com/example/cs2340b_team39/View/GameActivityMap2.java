@@ -2,6 +2,7 @@ package com.example.cs2340b_team39.View;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,6 +21,8 @@ public class GameActivityMap2 extends AppCompatActivity {
     private static ImageView sprite;
     private static ImageView bottom, top;
     private static TextView health;
+
+    private boolean finished =
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,7 @@ public class GameActivityMap2 extends AppCompatActivity {
         name.setText("Name: " + player.getName());
         health.setText("Health: " + player.getHealth() + "");
         player.getScore().setTextView(score);
+        finished = false;
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         //Button endButton = findViewById(R.id.button);
 //        Button nextMap = findViewById(R.id.nextmap);
@@ -53,6 +57,15 @@ public class GameActivityMap2 extends AppCompatActivity {
         }
         ActiveSub.setG2Active(true);
         ActiveSub.initializePlayer();
+        new CountDownTimer(300000, 100) {
+            public void onTick(long millisUntilFinished) {
+                if (!finished) {
+                    endGame();
+                }
+            }
+            public  void onFinish() {
+            }
+        }.start();
 //        nextMap.setOnClickListener(v -> {
 //            Intent nextIntent = new Intent(GameActivityMap2.this, GameActivityMap3.class);
 //            ActiveSub.setG2Active(false);
@@ -94,5 +107,13 @@ public class GameActivityMap2 extends AppCompatActivity {
     }
     public static void setHealth(double healthVal) {
         health.setText("Health: " + healthVal);
+    }
+    public void endGame() {
+        if (player.getHealth() <= 0) {
+            finished = true;
+            Intent endIntent = new Intent(GameActivityMap2.this, EndActivity.class);
+            ActiveSub.setG2Active(false);
+            startActivity(endIntent);
+        }
     }
 }
