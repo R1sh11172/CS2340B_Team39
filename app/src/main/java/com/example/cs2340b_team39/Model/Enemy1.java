@@ -1,6 +1,8 @@
 package com.example.cs2340b_team39.Model;
 
-public class Enemy1 extends Enemy {
+import android.widget.ImageView;
+
+public class Enemy1 implements Enemy {
     private double health;
     private double speed;
     private double damage;
@@ -8,6 +10,15 @@ public class Enemy1 extends Enemy {
     private double x;
     private double y;
     private EnemyMovement movement;
+    public Enemy1(ImageView i) {
+        health = 20;
+        speed = 20;
+        damage = 20;
+        size = 16;
+        x = i.getX();
+        y = i.getY();
+        doubleDamage();
+    }
 
     public void setX(double x) {
         this.x = x;
@@ -30,6 +41,11 @@ public class Enemy1 extends Enemy {
     public void doubleDamage() {
         damage *= 2;
     }
+    public void movePattern() {
 
+    }
+    public void initMovement() {
+        this.movement.setEnemy(this);
+    }
 
 }

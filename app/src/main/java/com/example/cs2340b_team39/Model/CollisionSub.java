@@ -1,5 +1,7 @@
 package com.example.cs2340b_team39.Model;
 
+import com.example.cs2340b_team39.ViewModel.ViewModel;
+
 import java.util.ArrayList;
 public class CollisionSub {
     private ArrayList<Enemy> enemies;
@@ -36,11 +38,12 @@ public class CollisionSub {
             if (playerY >= enemyY && playerY <= enemyY + enemySize) {
                 collide = true;
             }
-            if (playerY + 16 >= enemyY && playerY + 16 <= enemyY + 16) {
+            if (playerY + 16 >= enemyY && playerY + 16 <= enemyY + enemySize) {
                 collide = true;
             }
             if (collide) {
                 player.setHealth(player.getHealth() - enemies.get(i).getDamage());
+                ViewModel.updateHealth();
             }
         }
     }

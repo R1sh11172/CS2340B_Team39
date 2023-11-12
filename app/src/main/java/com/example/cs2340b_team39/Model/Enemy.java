@@ -1,32 +1,22 @@
 package com.example.cs2340b_team39.Model;
 
-public abstract class Enemy {
-    private double health;
-    private double speed;
-    private double damage;
-    private double size;
-    private double x;
-    private double y;
-    private EnemyMovement movement;
-    public void setX(double x) {
-        this.x = x;
-    }
-    public void setY(double y) {
-        this.y = y;
-    }
-    public double getX() {
-        return x;
-    }
-    public double getY() {
-        return y;
-    }
-    public double getDamage() {
-        return damage;
-    }
-    public double getSize() {
-        return size;
-    }
-    public void movePattern() {
-        //Implement each enemy movement pattern here.
-    }
+import android.widget.ImageView;
+
+public interface Enemy {
+//    double health;
+//    double speed;
+//    double damage;
+//    double size;
+//    double x;
+//    double y;
+//    ImageView sprite;
+//    EnemyMovement movement;
+    void setX(double x);
+    void setY(double y);
+    double getX();
+    double getY();
+    double getDamage();
+    double getSize();
+    void movePattern();
+    void initMovement();
 }
