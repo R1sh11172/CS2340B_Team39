@@ -2,6 +2,7 @@ package com.example.cs2340b_team39.View;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,6 +21,8 @@ public class GameActivityMap3 extends AppCompatActivity {
     private static ImageView sprite;
     private static ImageView top, bottom, leftC;
     private static TextView health;
+
+    private static boolean finished;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,7 @@ public class GameActivityMap3 extends AppCompatActivity {
         name.setText("Name: " + player.getName());
         health.setText("Health: " + player.getHealth() + "");
         player.getScore().setTextView(score);
+        finished = false;
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
 //        Button endButton = findViewById(R.id.button);
         //Button nextMap = findViewById(R.id.nextmap);
@@ -54,7 +58,15 @@ public class GameActivityMap3 extends AppCompatActivity {
         }
         ActiveSub.setG3Active(true);
         ActiveSub.initializePlayer();
-
+        new CountDownTimer(300000, 100) {
+            public void onTick(long millisUntilFinished) {
+                if (!finished) {
+                    endGame();
+                }
+            }
+            public void onFinish() {
+            }
+        }.start();
         //        nextMap.setOnClickListener(v -> {
         //            Intent nextIntent = new Intent(GameActivityMap3.this, GameActivity.class);
         //            startActivity(nextIntent);
@@ -100,5 +112,14 @@ public class GameActivityMap3 extends AppCompatActivity {
     }
     public static void setHealth(double healthVal) {
         health.setText("Health: " + healthVal);
+    }
+
+    public void endGame() {
+        if (player.getHealth() <= 0) {
+            finished = true;
+            Intent endIntent = new Intent(GameActivityMap3.this, EndActivity.class);
+            ActiveSub.setG3Active(false);
+            startActivity(endIntent);
+        }
     }
 }
