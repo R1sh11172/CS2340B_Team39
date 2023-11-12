@@ -22,7 +22,7 @@ public class GameActivityMap2 extends AppCompatActivity {
     private static ImageView bottom, top;
     private static TextView health;
 
-    private boolean finished =
+    private boolean finished;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
