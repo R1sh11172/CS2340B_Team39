@@ -1,9 +1,12 @@
 package com.example.cs2340b_team39.View;
 
+import static com.example.cs2340b_team39.ViewModel.ViewModel.endGame;
+
 import android.content.Context;
 import android.content.Intent;
 //import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.KeyEvent;
 //import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,6 +27,8 @@ public class GameActivity extends AppCompatActivity {
     private static int screenWidth, screenHeight;
     private static TextView health;
 
+    private static boolean finished;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,7 @@ public class GameActivity extends AppCompatActivity {
         TextView difficulty = findViewById(R.id.difficultyDisplay);
         TextView score = findViewById(R.id.scoreDisplay);
         player = Player.getPlayer();
+        finished = false;
         name.setText("Name: " + player.getName());
         health.setText("Health: " + player.getHealth() + "");
         player.getScore().count();
@@ -71,6 +77,17 @@ public class GameActivity extends AppCompatActivity {
         }
         ActiveSub.setG1Active(true);
         ActiveSub.initializePlayer();
+
+        new CountDownTimer(300000, 100) {
+            public void onTick(long millisUntilFinished) {
+                if (!finished) {
+                    endGame();
+                }
+            }
+            public  void onFinish() {
+            }
+        }.start();
+
 //        nextMap.setOnClickListener(v -> {
 //            Intent nextIntent = new Intent(GameActivity.this, GameActivityMap2.class);
 //            ActiveSub.setG1Active(false);
@@ -131,4 +148,12 @@ public class GameActivity extends AppCompatActivity {
 //        context.startActivity(endIntent);
 //        //startActivity(endIntent);
 //    }
+    public void endGame() {
+        if (player.getHealth() <= 0) {
+            finished = true;
+            Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
+            ActiveSub.setG1Active(false);
+            startActivity(endIntent);
+        }
+    }
 }
