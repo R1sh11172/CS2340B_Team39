@@ -124,7 +124,7 @@ public class S4UnitTests {
         double y = e2.getY();
         e2.move(0);
         assertEquals(x, e2.getX(), .1);
-        assertEquals(y - 40, e2.getY() - e2.getSpeed(), .1);
+        assertEquals(y - 80, e2.getY() - e2.getSpeed(), .1);
     }
 
     @Test
@@ -137,7 +137,7 @@ public class S4UnitTests {
         double y = e2.getY();
         e2.move(2);
         assertEquals(x, e2.getX(), .1);
-        assertEquals(y + 40, e2.getY() + e2.getSpeed(), .1);
+        assertEquals(y + 80, e2.getY() + e2.getSpeed(), .1);
     }
     @Test
     public void moveEnemy2Right() {
@@ -148,7 +148,7 @@ public class S4UnitTests {
         double x = e2.getX();
         double y = e2.getY();
         e2.move(1);
-        assertEquals(x + 40, e2.getX() + e2.getSpeed(), .1);
+        assertEquals(x + 80, e2.getX() + e2.getSpeed(), .1);
         assertEquals(y, e2.getY(), .1);
     }
 
@@ -161,11 +161,12 @@ public class S4UnitTests {
         double x = e2.getX();
         double y = e2.getY();
         e2.move(3);
-        assertEquals(x - 40, e2.getX() - e2.getSpeed(), .1);
+        assertEquals(x - 80, e2.getX() - e2.getSpeed(), .1);
         assertEquals(y, e2.getY(), .1);
     }
 
-    @Test void enemy3Movement() {
+    @Test
+    public void enemy3Movement() {
         Enemy3 e3 = new Enemy3(null);
         e3.setMovement(new EnemyMovement(e3));
         e3.initMovement();
