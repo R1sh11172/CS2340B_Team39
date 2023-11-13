@@ -22,6 +22,7 @@ public class EnemyMovement implements Movement {
         if (checkCollisions()) {
             enemy.setX(enemy.getX() + speed);
         }
+        ViewModel.updateEnemyPosition(enemy);
     }
 
     public void moveRight(int speed) {
@@ -29,6 +30,7 @@ public class EnemyMovement implements Movement {
         if (checkCollisions()) {
             enemy.setX(enemy.getX() - speed);
         }
+        ViewModel.updateEnemyPosition(enemy);
     }
 
     public void moveUp(int speed) {
@@ -36,6 +38,7 @@ public class EnemyMovement implements Movement {
         if (checkCollisions()) {
             enemy.setY(enemy.getY() + speed);
         }
+        ViewModel.updateEnemyPosition(enemy);
     }
 
     public void moveDown(int speed) {
@@ -43,6 +46,7 @@ public class EnemyMovement implements Movement {
         if (checkCollisions()) {
             enemy.setY(enemy.getY() - speed);
         }
+        ViewModel.updateEnemyPosition(enemy);
     }
 
     public boolean checkCollisions() {
