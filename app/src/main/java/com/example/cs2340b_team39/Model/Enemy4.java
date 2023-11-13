@@ -19,12 +19,16 @@ public class Enemy4 implements Enemy {
     public Enemy4(ImageView i) {
         health = 20;
         speed = 20;
-        damage = Math.pow(2, 1 + Player.getPlayer().getDifficulty());
+        if (Player.getPlayer() != null) {
+            damage = Math.pow(2, 1 + Player.getPlayer().getDifficulty());
+        }
         size = 50;
-        x = i.getX();
-        y = i.getY();
         tripleSpeed();
-        sprite = i;
+        if (i != null) {
+            x = i.getX();
+            y = i.getY();
+            sprite = i;
+        }
     }
 
     public void setX(double x) {

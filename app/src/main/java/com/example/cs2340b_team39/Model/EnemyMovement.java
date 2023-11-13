@@ -9,6 +9,7 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class EnemyMovement implements Movement {
     public Enemy enemy;
+    public boolean testCase;
 
     public EnemyMovement(Enemy e) {
         this.enemy = e;
@@ -50,9 +51,9 @@ public class EnemyMovement implements Movement {
     }
 
     public boolean checkCollisions() {
-        //if (testCase) {
-        //    return false;
-        //}
+        if (testCase) {
+            return false;
+        }
         int map = ViewModel.checkMap();
         if (map == 1) {
             if (enemy.getX() <= 5) {
