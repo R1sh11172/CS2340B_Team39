@@ -114,6 +114,9 @@ public class ViewModel {
 //        }
     }
     public static void updateEnemyPosition(Enemy e) {
+        if (e.getSprite() == null) {
+            return;
+        }
         e.getSprite().setX((float) e.getX());
         e.getSprite().setY((float) e.getY());
     }

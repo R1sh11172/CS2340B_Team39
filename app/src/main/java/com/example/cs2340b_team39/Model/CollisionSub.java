@@ -65,4 +65,7 @@ public class CollisionSub {
     public void addEnemy(Enemy enemy) {
         enemies.add(enemy);
     }
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
+    }
 }

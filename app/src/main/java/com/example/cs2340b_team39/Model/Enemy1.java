@@ -19,12 +19,16 @@ public class Enemy1 implements Enemy {
     public Enemy1(ImageView i) {
         health = 20;
         speed = 20;
-        damage = Math.pow(2, 1 + Player.getPlayer().getDifficulty());
+        if (Player.getPlayer() != null) {
+            damage = Math.pow(2, 1 + Player.getPlayer().getDifficulty());
+        }
         size = 60;
-        x = i.getX();
-        y = i.getY();
         doubleDamage();
-        sprite = i;
+        if (i != null) {
+            x = i.getX();
+            y = i.getY();
+            sprite = i;
+        }
     }
 
     public void setX(double x) {
@@ -97,5 +101,30 @@ public class Enemy1 implements Enemy {
     }
     public void setMovement(EnemyMovement m) {
         movement = m;
+    }
+    public void move(int dir) {
+        switch (dir) {
+        case 0:
+            movement.moveUp((int) speed);
+            break;
+        case 1:
+            movement.moveRight((int) speed);
+            break;
+        case 2:
+            movement.moveDown((int) speed);
+            break;
+        case 3:
+            movement.moveLeft((int) speed);
+            break;
+
+        default:
+            break;
+        }
+    }
+    public double getSpeed() {
+        return speed;
+    }
+    public EnemyMovement getMovement() {
+        return movement;
     }
 }
