@@ -74,5 +74,42 @@ public class S4UnitTests {
         assertEquals(y - 40, e1.getY() - e1.getSpeed(), .1);
     }
 
+    @Test
+    public void moveEnemy1Right() {
+        Enemy1 e1 = new Enemy1(null);
+        e1.setMovement(new EnemyMovement(e1));
+        e1.initMovement();
+        e1.getMovement().testCase = true;
+        double x = e1.getX();
+        double y = e1.getY();
+        e1.move(1);
+        assertEquals(x + 40, e1.getX() + e1.getSpeed(), .1);
+        assertEquals(y, e1.getY(), .1);
+    }
 
+    @Test
+    public void moveEnemy1Down() {
+        Enemy1 e1 = new Enemy1(null);
+        e1.setMovement(new EnemyMovement(e1));
+        e1.initMovement();
+        e1.getMovement().testCase = true;
+        double x = e1.getX();
+        double y = e1.getY();
+        e1.move(2);
+        assertEquals(x, e1.getX(), .1);
+        assertEquals(y + 40, e1.getY() + e1.getSpeed(), .1);
+    }
+
+    @Test
+    public void moveEnemy1Left() {
+        Enemy1 e1 = new Enemy1(null);
+        e1.setMovement(new EnemyMovement(e1));
+        e1.initMovement();
+        e1.getMovement().testCase = true;
+        double x = e1.getX();
+        double y = e1.getY();
+        e1.move(3);
+        assertEquals(x - 40, e1.getX() - e1.getSpeed(), .1);
+        assertEquals(y, e1.getY(), .1);
+    }
 }
