@@ -88,9 +88,9 @@ public class ViewModel {
         } else {
             return null;
         }
-        float scale = (float) e.getSize() / 20;
-        i.setScaleX(scale);
-        i.setScaleY(scale);
+//        float scale = (float) e.getSize() / 20;
+//        i.setScaleX(scale);
+//        i.setScaleY(scale);
 
         CollisionSub.getCollision().addEnemy(e);
         return e;
@@ -112,6 +112,10 @@ public class ViewModel {
 ////            ActiveSub.setG1Active(false);
 ////            startActivity(endIntent);
 //        }
+    }
+    public static void updateEnemyPosition(Enemy e) {
+        e.getSprite().setX((float) e.getX());
+        e.getSprite().setY((float) e.getY());
     }
 }
 

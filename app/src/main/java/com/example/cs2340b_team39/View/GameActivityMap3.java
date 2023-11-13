@@ -10,7 +10,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cs2340b_team39.Model.CollisionSub;
 import com.example.cs2340b_team39.Model.Difficulty;
+import com.example.cs2340b_team39.Model.Enemy;
+import com.example.cs2340b_team39.Model.EnemyMovement;
 import com.example.cs2340b_team39.Model.Player;
 import com.example.cs2340b_team39.R;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
@@ -18,7 +21,7 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 public class GameActivityMap3 extends AppCompatActivity {
     private Player player = Player.getPlayer();
     //private boolean active = false;
-    private static ImageView sprite;
+    private static ImageView sprite, enemy1, enemy2;
     private static ImageView top, bottom, leftC;
     private static TextView health;
 
@@ -38,6 +41,18 @@ public class GameActivityMap3 extends AppCompatActivity {
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
 //        Button endButton = findViewById(R.id.button);
         //Button nextMap = findViewById(R.id.nextmap);
+        enemy1 = findViewById(R.id.imageView42);
+        enemy2 = findViewById(R.id.imageView45);
+        enemy1.setX((float) 500);
+        enemy1.setY((float) 800);
+        double x1 = enemy1.getX();
+        enemy2.setX((float) 500);
+        enemy2.setY((float) 1000);
+
+        Enemy e1 = ViewModel.initEnemy(enemy1, 3);
+        Enemy e2 = ViewModel.initEnemy(enemy2, 4);
+        e1.setMovement(new EnemyMovement(e1));
+        e2.setMovement(new EnemyMovement(e2));
         sprite = findViewById(R.id.imageView);
         top = findViewById(R.id.imageView30);
         bottom = findViewById(R.id.imageView16);
@@ -58,6 +73,13 @@ public class GameActivityMap3 extends AppCompatActivity {
         }
         ActiveSub.setG3Active(true);
         ActiveSub.initializePlayer();
+        if (e1 != null) {
+            e1.movePattern();
+        }
+
+        if (e2 != null) {
+            e2.movePattern();
+        }
         new CountDownTimer(300000, 100) {
             public void onTick(long millisUntilFinished) {
                 if (!finished) {
@@ -117,6 +139,7 @@ public class GameActivityMap3 extends AppCompatActivity {
     public void endGame() {
         if (player.getHealth() <= 0) {
             finished = true;
+            CollisionSub.getCollision().clearCollisions();
             Intent endIntent = new Intent(GameActivityMap3.this, EndActivity.class);
             ActiveSub.setG3Active(false);
             startActivity(endIntent);

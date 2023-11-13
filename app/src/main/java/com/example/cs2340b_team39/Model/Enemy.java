@@ -19,4 +19,7 @@ public interface Enemy {
     double getSize();
     void movePattern();
     void initMovement();
+    ImageView getSprite();
+    void setFinished(boolean b);
+    void setMovement(EnemyMovement m);
 }

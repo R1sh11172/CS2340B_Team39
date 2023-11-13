@@ -15,7 +15,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.cs2340b_team39.Model.CollisionSub;
 import com.example.cs2340b_team39.Model.Difficulty;
+import com.example.cs2340b_team39.Model.Enemy;
+import com.example.cs2340b_team39.Model.EnemyMovement;
 import com.example.cs2340b_team39.Model.Player;
 import com.example.cs2340b_team39.R;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
@@ -50,12 +53,16 @@ public class GameActivity extends AppCompatActivity {
         //Button endButton = findViewById(R.id.button);
         enemy1 = findViewById(R.id.imageView9);
         enemy2 = findViewById(R.id.imageView44);
-        enemy1.setX(300);
-        enemy1.setY(300);
+        enemy1.setX((float) screenWidth / 3);
+        enemy1.setY((float) screenHeight / 2);
         double x1 = enemy1.getX();
+        enemy2.setX((float) screenWidth / 2);
+        enemy2.setY((float) screenHeight / 2);
 
-        ViewModel.initEnemy(enemy1, 1);
-        ViewModel.initEnemy(enemy2, 2);
+        Enemy e1 = ViewModel.initEnemy(enemy1, 2);
+        Enemy e2 = ViewModel.initEnemy(enemy2, 1);
+        e1.setMovement(new EnemyMovement(e1));
+        e2.setMovement(new EnemyMovement(e2));
         sprite = findViewById(R.id.imageView);
         leftC = findViewById(R.id.imageView36);
         rightC = findViewById(R.id.imageView40);
@@ -77,6 +84,13 @@ public class GameActivity extends AppCompatActivity {
         }
         ActiveSub.setG1Active(true);
         ActiveSub.initializePlayer();
+        if (e1 != null) {
+            e1.movePattern();
+        }
+
+        if (e2 != null) {
+            e2.movePattern();
+        }
 
         new CountDownTimer(300000, 100) {
             public void onTick(long millisUntilFinished) {
@@ -121,6 +135,7 @@ public class GameActivity extends AppCompatActivity {
         }
         //checkCollisions();
         if (player.getPlayerX() > 880 && player.getPlayerX() < 980 && player.getPlayerY() > 1000 && player.getPlayerY() < 1100) {
+            CollisionSub.getCollision().clearCollisions();
             Intent nextIntent = new Intent(GameActivity.this, GameActivityMap2.class);
             ActiveSub.setG1Active(false);
             startActivity(nextIntent);
@@ -151,6 +166,7 @@ public class GameActivity extends AppCompatActivity {
     public void endGame() {
         if (player.getHealth() <= 0) {
             finished = true;
+            CollisionSub.getCollision().clearCollisions();
             Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
             ActiveSub.setG1Active(false);
             startActivity(endIntent);

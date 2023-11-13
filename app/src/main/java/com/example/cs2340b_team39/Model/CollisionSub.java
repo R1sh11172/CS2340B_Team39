@@ -30,21 +30,36 @@ public class CollisionSub {
             double enemySize = enemies.get(i).getSize();
             boolean collide = false;
             if (playerX >= enemyX && playerX <= enemyX + enemySize) {
-                collide = true;
+                if (playerY >= enemyY && playerY <= enemyY + enemySize) {
+                    collide = true;
+                }
+                if ((playerY + 16) >= enemyY && (playerY + 16) <= (enemyY + enemySize)) {
+                    collide = true;
+                }
             }
             if (playerX + 16 >= enemyX && playerX + 16 <= enemyX + enemySize) {
-                collide = true;
+                if (playerY >= enemyY && playerY <= enemyY + enemySize) {
+                    collide = true;
+                }
+                if ((playerY + 16) >= enemyY && (playerY + 16) <= (enemyY + enemySize)) {
+                    collide = true;
+                }
             }
-            if (playerY >= enemyY && playerY <= enemyY + enemySize) {
-                collide = true;
-            }
-            if ((playerY + 16) >= enemyY && (playerY + 16) <= (enemyY + enemySize)) {
-                collide = true;
-            }
+//            if (playerY >= enemyY && playerY <= enemyY + enemySize) {
+//                collide = true;
+//            }
+//            if ((playerY + 16) >= enemyY && (playerY + 16) <= (enemyY + enemySize)) {
+//                collide = true;
+//            }
             if (collide) {
                 player.setHealth(player.getHealth() - enemies.get(i).getDamage());
                 ViewModel.updateHealth();
             }
+        }
+    }
+    public void clearCollisions() {
+        while (enemies.size() > 0) {
+            enemies.remove(0).setFinished(true);
         }
     }
     public void addEnemy(Enemy enemy) {
