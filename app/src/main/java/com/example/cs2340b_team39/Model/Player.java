@@ -12,7 +12,8 @@ public class Player {
     private Score score;
     private int characterId;
     private int speed;
-    private float playerX, playerY;
+    private float playerX;
+    private float playerY;
     private static volatile Player player;
     private PlayerMovement move;
     private Player(String name, int characterId, double difficulty) {

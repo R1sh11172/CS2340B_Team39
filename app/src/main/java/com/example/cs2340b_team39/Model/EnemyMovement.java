@@ -8,8 +8,8 @@ import com.example.cs2340b_team39.View.GameActivityMap3;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class EnemyMovement implements Movement {
-    public Enemy enemy;
-    public boolean testCase;
+    private Enemy enemy;
+    private boolean testCase;
 
     public EnemyMovement(Enemy e) {
         this.enemy = e;
@@ -123,5 +123,8 @@ public class EnemyMovement implements Movement {
     }
     public void setEnemy(Enemy e) {
         enemy = e;
+    }
+    public void setTestCase(boolean test) {
+        testCase = test;
     }
 }

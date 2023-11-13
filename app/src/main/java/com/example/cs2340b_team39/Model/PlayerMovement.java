@@ -1,6 +1,5 @@
 package com.example.cs2340b_team39.Model;
 
-import android.view.View;
 import android.widget.ImageView;
 
 import com.example.cs2340b_team39.View.GameActivity;

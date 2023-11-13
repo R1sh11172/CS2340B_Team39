@@ -3,14 +3,6 @@ package com.example.cs2340b_team39.Model;
 import android.widget.ImageView;
 
 public interface Enemy {
-//    double health;
-//    double speed;
-//    double damage;
-//    double size;
-//    double x;
-//    double y;
-//    ImageView sprite;
-//    EnemyMovement movement;
     void setX(double x);
     void setY(double y);
     double getX();

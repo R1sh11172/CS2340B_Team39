@@ -67,7 +67,7 @@ public class S4UnitTests {
         Enemy1 e1 = new Enemy1(null);
         e1.setMovement(new EnemyMovement(e1));
         e1.initMovement();
-        e1.getMovement().testCase = true;
+        e1.getMovement().setTestCase(true);
         double x = e1.getX();
         double y = e1.getY();
         e1.move(0);
@@ -80,7 +80,7 @@ public class S4UnitTests {
         Enemy1 e1 = new Enemy1(null);
         e1.setMovement(new EnemyMovement(e1));
         e1.initMovement();
-        e1.getMovement().testCase = true;
+        e1.getMovement().setTestCase(true);
         double x = e1.getX();
         double y = e1.getY();
         e1.move(1);
@@ -93,7 +93,7 @@ public class S4UnitTests {
         Enemy1 e1 = new Enemy1(null);
         e1.setMovement(new EnemyMovement(e1));
         e1.initMovement();
-        e1.getMovement().testCase = true;
+        e1.getMovement().setTestCase(true);
         double x = e1.getX();
         double y = e1.getY();
         e1.move(2);
@@ -106,7 +106,7 @@ public class S4UnitTests {
         Enemy1 e1 = new Enemy1(null);
         e1.setMovement(new EnemyMovement(e1));
         e1.initMovement();
-        e1.getMovement().testCase = true;
+        e1.getMovement().setTestCase(true);
         double x = e1.getX();
         double y = e1.getY();
         e1.move(3);
@@ -119,7 +119,7 @@ public class S4UnitTests {
         Enemy2 e2 = new Enemy2(null);
         e2.setMovement(new EnemyMovement(e2));
         e2.initMovement();
-        e2.getMovement().testCase = true;
+        e2.getMovement().setTestCase(true);
         double x = e2.getX();
         double y = e2.getY();
         e2.move(0);
@@ -132,7 +132,7 @@ public class S4UnitTests {
         Enemy2 e2 = new Enemy2(null);
         e2.setMovement(new EnemyMovement(e2));
         e2.initMovement();
-        e2.getMovement().testCase = true;
+        e2.getMovement().setTestCase(true);
         double x = e2.getX();
         double y = e2.getY();
         e2.move(2);
@@ -144,7 +144,7 @@ public class S4UnitTests {
         Enemy2 e2 = new Enemy2(null);
         e2.setMovement(new EnemyMovement(e2));
         e2.initMovement();
-        e2.getMovement().testCase = true;
+        e2.getMovement().setTestCase(true);
         double x = e2.getX();
         double y = e2.getY();
         e2.move(1);
@@ -157,7 +157,7 @@ public class S4UnitTests {
         Enemy2 e2 = new Enemy2(null);
         e2.setMovement(new EnemyMovement(e2));
         e2.initMovement();
-        e2.getMovement().testCase = true;
+        e2.getMovement().setTestCase(true);
         double x = e2.getX();
         double y = e2.getY();
         e2.move(3);
@@ -170,7 +170,7 @@ public class S4UnitTests {
         Enemy3 e3 = new Enemy3(null);
         e3.setMovement(new EnemyMovement(e3));
         e3.initMovement();
-        e3.getMovement().testCase = true;
+        e3.getMovement().setTestCase(true);
         double x = e3.getX();
         double y = e3.getY();
         e3.move(3);

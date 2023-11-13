@@ -2,7 +2,6 @@ package com.example.cs2340b_team39.View;
 
 import static com.example.cs2340b_team39.ViewModel.ViewModel.endGame;
 
-import android.content.Context;
 import android.content.Intent;
 //import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -25,9 +24,15 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 
 public class GameActivity extends AppCompatActivity {
     private static Player player;
-    private static ImageView sprite, enemy1, enemy2;
-    private static ImageView leftC, rightC, top, bottom;
-    private static int screenWidth, screenHeight;
+    private static ImageView sprite;
+    private static ImageView enemy1;
+    private static ImageView enemy2;
+    private static ImageView leftC;
+    private static ImageView rightC;
+    private static ImageView top;
+    private static ImageView bottom;
+    private static int screenWidth;
+    private static int screenHeight;
     private static TextView health;
 
     private static boolean finished;
@@ -49,8 +54,6 @@ public class GameActivity extends AppCompatActivity {
         player.getScore().count();
         ViewModel.changeScoreId(score);
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
-//        Button nextMap = findViewById(R.id.nextmap);
-        //Button endButton = findViewById(R.id.button);
         enemy1 = findViewById(R.id.imageView9);
         enemy2 = findViewById(R.id.imageView44);
         enemy1.setX((float) screenWidth / 3);
@@ -102,11 +105,6 @@ public class GameActivity extends AppCompatActivity {
             }
         }.start();
 
-//        nextMap.setOnClickListener(v -> {
-//            Intent nextIntent = new Intent(GameActivity.this, GameActivityMap2.class);
-//            ActiveSub.setG1Active(false);
-//            startActivity(nextIntent);
-//        });
         //        endButton.setOnClickListener(v -> {
         //            Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
         //            startActivity(endIntent);
@@ -134,7 +132,8 @@ public class GameActivity extends AppCompatActivity {
             ViewModel.updatePlayerPosition(2);
         }
         //checkCollisions();
-        if (player.getPlayerX() > 880 && player.getPlayerX() < 980 && player.getPlayerY() > 1000 && player.getPlayerY() < 1100) {
+        if (player.getPlayerX() > 880 && player.getPlayerX() < 980 && player.getPlayerY() > 1000
+                && player.getPlayerY() < 1100) {
             CollisionSub.getCollision().clearCollisions();
             Intent nextIntent = new Intent(GameActivity.this, GameActivityMap2.class);
             ActiveSub.setG1Active(false);
@@ -158,11 +157,6 @@ public class GameActivity extends AppCompatActivity {
         health.setText("Health: " + healthVal);
     }
 
-//    public static void terminateGame(Context context) {
-//        Intent endIntent = new Intent(context, EndActivity.class);
-//        context.startActivity(endIntent);
-//        //startActivity(endIntent);
-//    }
     public void endGame() {
         if (player.getHealth() <= 0) {
             finished = true;

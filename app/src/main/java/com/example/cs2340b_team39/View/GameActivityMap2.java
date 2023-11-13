@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.KeyEvent;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,8 +20,11 @@ import com.example.cs2340b_team39.ViewModel.ViewModel;
 public class GameActivityMap2 extends AppCompatActivity {
     private Player player = Player.getPlayer();
     //private boolean active;
-    private static ImageView sprite, enemy1, enemy2;
-    private static ImageView bottom, top;
+    private static ImageView sprite;
+    private static ImageView enemy1;
+    private static ImageView enemy2;
+    private static ImageView bottom;
+    private static ImageView top;
     private static TextView health;
 
     private boolean finished;
@@ -40,7 +42,6 @@ public class GameActivityMap2 extends AppCompatActivity {
         finished = false;
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         //Button endButton = findViewById(R.id.button);
-//        Button nextMap = findViewById(R.id.nextmap);
         enemy1 = findViewById(R.id.imageView41);
         enemy2 = findViewById(R.id.imageView47);
         enemy1.setX((float) 400);
@@ -88,11 +89,6 @@ public class GameActivityMap2 extends AppCompatActivity {
             public  void onFinish() {
             }
         }.start();
-//        nextMap.setOnClickListener(v -> {
-//            Intent nextIntent = new Intent(GameActivityMap2.this, GameActivityMap3.class);
-//            ActiveSub.setG2Active(false);
-//            startActivity(nextIntent);
-//        });
         //        endButton.setOnClickListener(v -> {
         //            Intent endIntent = new Intent(GameActivityMap2.this, EndActivity.class);
         //            startActivity(endIntent);
@@ -111,7 +107,8 @@ public class GameActivityMap2 extends AppCompatActivity {
             ViewModel.updatePlayerPosition(2);
         }
         //checkCollisions();
-        if (player.getPlayerX() > 900 && player.getPlayerX() < 1000 && player.getPlayerY() > 650 && player.getPlayerY() < 750) {
+        if (player.getPlayerX() > 900 && player.getPlayerX() < 1000 && player.getPlayerY() > 650
+                && player.getPlayerY() < 750) {
             Intent nextIntent = new Intent(GameActivityMap2.this, GameActivityMap3.class);
             ActiveSub.setG2Active(false);
             startActivity(nextIntent);
