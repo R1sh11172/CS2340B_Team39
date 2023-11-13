@@ -33,6 +33,7 @@ import com.example.cs2340b_team39.Model.CollisionSub;
 import com.example.cs2340b_team39.Model.Enemy;
 import com.example.cs2340b_team39.Model.Enemy1;
 import com.example.cs2340b_team39.Model.Enemy2;
+import com.example.cs2340b_team39.Model.Enemy3;
 import com.example.cs2340b_team39.Model.EnemyMovement;
 import com.example.cs2340b_team39.Model.Player;
 
@@ -112,4 +113,72 @@ public class S4UnitTests {
         assertEquals(x - 40, e1.getX() - e1.getSpeed(), .1);
         assertEquals(y, e1.getY(), .1);
     }
+
+    @Test
+    public void moveEnemy2Up() {
+        Enemy2 e2 = new Enemy2(null);
+        e2.setMovement(new EnemyMovement(e2));
+        e2.initMovement();
+        e2.getMovement().testCase = true;
+        double x = e2.getX();
+        double y = e2.getY();
+        e2.move(0);
+        assertEquals(x, e2.getX(), .1);
+        assertEquals(y - 40, e2.getY() - e2.getSpeed(), .1);
+    }
+
+    @Test
+    public void moveEnemy2Down() {
+        Enemy2 e2 = new Enemy2(null);
+        e2.setMovement(new EnemyMovement(e2));
+        e2.initMovement();
+        e2.getMovement().testCase = true;
+        double x = e2.getX();
+        double y = e2.getY();
+        e2.move(2);
+        assertEquals(x, e2.getX(), .1);
+        assertEquals(y + 40, e2.getY() + e2.getSpeed(), .1);
+    }
+    @Test
+    public void moveEnemy2Right() {
+        Enemy2 e2 = new Enemy2(null);
+        e2.setMovement(new EnemyMovement(e2));
+        e2.initMovement();
+        e2.getMovement().testCase = true;
+        double x = e2.getX();
+        double y = e2.getY();
+        e2.move(1);
+        assertEquals(x + 40, e2.getX() + e2.getSpeed(), .1);
+        assertEquals(y, e2.getY(), .1);
+    }
+
+    @Test
+    public void moveEnemy2Left() {
+        Enemy2 e2 = new Enemy2(null);
+        e2.setMovement(new EnemyMovement(e2));
+        e2.initMovement();
+        e2.getMovement().testCase = true;
+        double x = e2.getX();
+        double y = e2.getY();
+        e2.move(3);
+        assertEquals(x - 40, e2.getX() - e2.getSpeed(), .1);
+        assertEquals(y, e2.getY(), .1);
+    }
+
+    @Test void enemy3Movement() {
+        Enemy3 e3 = new Enemy3(null);
+        e3.setMovement(new EnemyMovement(e3));
+        e3.initMovement();
+        e3.getMovement().testCase = true;
+        double x = e3.getX();
+        double y = e3.getY();
+        e3.move(3);
+        assertEquals(x - 40, e3.getX() - e3.getSpeed(), .1);
+        assertEquals(y, e3.getY(), .1);
+    }
+
+
+
+
+
 }

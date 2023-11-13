@@ -107,4 +107,29 @@ public class Enemy3 implements Enemy {
     public void setMovement(EnemyMovement m) {
         movement = m;
     }
+
+    public void move(int dir) {
+        switch (dir) {
+            case 0:
+                movement.moveUp((int) speed);
+                break;
+            case 1:
+                movement.moveRight((int) speed);
+                break;
+            case 2:
+                movement.moveDown((int) speed);
+                break;
+            case 3:
+                movement.moveLeft((int) speed);
+                break;
+            default:
+                break;
+        }
+    }
+    public double getSpeed() {
+        return speed;
+    }
+    public EnemyMovement getMovement() {
+        return movement;
+    }
 }
