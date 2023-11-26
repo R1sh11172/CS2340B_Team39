@@ -16,6 +16,7 @@ public class Player {
     private float playerY;
     private static volatile Player player;
     private PlayerMovement move;
+    private boolean isAttacking = false;
     private Player(String name, int characterId, double difficulty) {
         this.name = name;
         //this.avatar = avatar;
@@ -103,6 +104,14 @@ public class Player {
     }
     public void setHealth(double health) {
         this.health = health;
+    }
+
+    public boolean getIsAttacking() {
+        return this.isAttacking;
+    }
+
+    public void setIsAttacking(boolean b) {
+        isAttacking = b;
     }
     public PlayerMovement getPlayerMovement() {
         return move;

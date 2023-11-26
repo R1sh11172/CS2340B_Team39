@@ -14,4 +14,7 @@ public interface Enemy {
     ImageView getSprite();
     void setFinished(boolean b);
     void setMovement(EnemyMovement m);
+
+    boolean getIsDead();
+    void setIsDead(boolean b);
 }

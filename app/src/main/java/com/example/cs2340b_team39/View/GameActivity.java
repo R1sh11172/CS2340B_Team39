@@ -130,6 +130,8 @@ public class GameActivity extends AppCompatActivity {
             ViewModel.updatePlayerPosition(0);
         } else if (keyCode == KeyEvent.KEYCODE_S) {
             ViewModel.updatePlayerPosition(2);
+        } else if (keyCode == KeyEvent.KEYCODE_X) {
+            player.setIsAttacking(true);
         }
         //checkCollisions();
         if (player.getPlayerX() > 880 && player.getPlayerX() < 980 && player.getPlayerY() > 1000
