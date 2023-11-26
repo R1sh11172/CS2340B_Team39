@@ -1,11 +1,8 @@
 package com.example.cs2340b_team39.ViewModel;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.cs2340b_team39.Model.CollisionSub;
 import com.example.cs2340b_team39.Model.Enemy;
@@ -16,14 +13,11 @@ import com.example.cs2340b_team39.Model.Enemy4;
 import com.example.cs2340b_team39.Model.Leaderboard;
 import com.example.cs2340b_team39.Model.Model;
 import com.example.cs2340b_team39.Model.Player;
-import com.example.cs2340b_team39.Model.PlayerMovement;
 import com.example.cs2340b_team39.Model.Score;
 import com.example.cs2340b_team39.View.ActiveSub;
-import com.example.cs2340b_team39.View.EndActivity;
 import com.example.cs2340b_team39.View.GameActivity;
 import com.example.cs2340b_team39.View.GameActivityMap2;
 import com.example.cs2340b_team39.View.GameActivityMap3;
-import com.example.cs2340b_team39.View.SubPlayerPos;
 
 public class ViewModel {
     public static boolean validateCredentials(String name, int difficulty, int character) {
