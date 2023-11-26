@@ -1,6 +1,7 @@
 package com.example.cs2340b_team39.Model;
 
 import android.os.CountDownTimer;
+import android.view.View;
 import android.widget.ImageView;
 
 import java.util.LinkedList;
@@ -16,6 +17,7 @@ public class Enemy4 implements Enemy {
     private double y;
     private EnemyMovement movement;
     private ImageView sprite;
+    private boolean isDead = false;
     public Enemy4(ImageView i) {
         health = 20;
         speed = 20;
@@ -106,5 +108,15 @@ public class Enemy4 implements Enemy {
     }
     public void setMovement(EnemyMovement m) {
         movement = m;
+    }
+
+    public boolean getIsDead() {
+        return isDead;
+    }
+    public void setIsDead(boolean b) {
+        isDead = b;
+        if (isDead) {
+            sprite.setVisibility(View.INVISIBLE);
+        }
     }
 }

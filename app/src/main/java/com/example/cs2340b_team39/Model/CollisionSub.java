@@ -45,9 +45,14 @@ public class CollisionSub {
                     collide = true;
                 }
             }
-            if (collide) {
+            if (enemies.get(i).getIsDead()) {
+                continue;
+            }
+            if (collide && !player.getIsAttacking()) {
                 player.setHealth(player.getHealth() - enemies.get(i).getDamage());
                 ViewModel.updateHealth();
+            } else if (collide && player.getIsAttacking()) {
+                enemies.get(i).setIsDead(true);
             }
         }
     }
