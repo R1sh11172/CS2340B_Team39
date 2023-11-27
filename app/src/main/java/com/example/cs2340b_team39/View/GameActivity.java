@@ -4,10 +4,12 @@ import static com.example.cs2340b_team39.ViewModel.ViewModel.endGame;
 
 import android.content.Intent;
 //import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.KeyEvent;
 //import android.widget.EditText;
+import android.view.View;
 import android.widget.ImageView;
 //import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -132,6 +134,10 @@ public class GameActivity extends AppCompatActivity {
             ViewModel.updatePlayerPosition(2);
         } else if (keyCode == KeyEvent.KEYCODE_X) {
             player.setIsAttacking(true);
+            ImageView sword = findViewById(R.id.imageView49);
+                sword.setVisibility(View.INVISIBLE);
+                sword.setVisibility(View.VISIBLE);
+
         }
         //checkCollisions();
         if (player.getPlayerX() > 880 && player.getPlayerX() < 980 && player.getPlayerY() > 1000
