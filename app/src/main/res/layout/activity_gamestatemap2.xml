@@ -397,10 +397,10 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="365dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
@@ -438,6 +438,16 @@
             app:layout_constraintBottom_toTopOf="@+id/imageView12"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
             app:srcCompat="@drawable/star" />
+
+        <ImageView
+            android:id="@+id/imageView53"
+            android:layout_width="46dp"
+            android:layout_height="73dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:srcCompat="@drawable/weapon_sword_emerald" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
