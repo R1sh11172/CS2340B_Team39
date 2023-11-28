@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ import com.example.cs2340b_team39.Model.PowerUp;
 import com.example.cs2340b_team39.Model.PowerUpHealth;
 import com.example.cs2340b_team39.Model.PowerUpDecorator;
 
+import com.example.cs2340b_team39.Model.PowerUpSpeed;
 import com.example.cs2340b_team39.R;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
 
@@ -30,6 +32,7 @@ public class GameActivityMap2 extends AppCompatActivity {
     private static ImageView bottom;
     private static ImageView top;
     private static TextView health;
+    private static ImageView powerup;
 
     private boolean finished;
     @Override
@@ -48,6 +51,7 @@ public class GameActivityMap2 extends AppCompatActivity {
         //Button endButton = findViewById(R.id.button);
         enemy1 = findViewById(R.id.imageView41);
         enemy2 = findViewById(R.id.imageView47);
+        powerup = findViewById(R.id.imageView46);
         enemy1.setX((float) 400);
         enemy1.setY((float) 800);
         double x1 = enemy1.getX();
@@ -117,10 +121,15 @@ public class GameActivityMap2 extends AppCompatActivity {
             ActiveSub.setG2Active(false);
             startActivity(nextIntent);
         }
-        if (false) { //TODO: check collision with powerup
-            //TODO: remove the powerup from the screen
-            PowerUp powerUp = new PowerUpHealth(null);
-            powerUp.applyPowerUp(player);
+        if (player.getPlayerX() > powerup.getX()
+                && player.getPlayerX() < powerup.getX() + powerup.getWidth()
+                && player.getPlayerY() > powerup.getY()
+                && player.getPlayerY() < powerup.getY() + powerup.getHeight()) {
+            if (powerup.getVisibility() == View.VISIBLE) {
+                PowerUp powerUp = new PowerUpHealth(null);
+                powerUp.applyPowerUp(player);
+            }
+            powerup.setVisibility(View.INVISIBLE);
         }
         return true;
     }

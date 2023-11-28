@@ -6,6 +6,6 @@ public class PowerUpFreeze extends PowerUpDecorator {
     }
 
     public void applyPowerUp(Player player) {
-        // TODO: implementation of the powerup (freeze enemies)
+        CollisionSub.getCollision().freezeEnemies();
     }
 }

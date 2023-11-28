@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.KeyEvent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ import com.example.cs2340b_team39.Model.Player;
 import com.example.cs2340b_team39.Model.PowerUp;
 import com.example.cs2340b_team39.Model.PowerUpFreeze;
 import com.example.cs2340b_team39.Model.PowerUpDecorator;
+import com.example.cs2340b_team39.Model.PowerUpSpeed;
 import com.example.cs2340b_team39.R;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
 
@@ -30,6 +32,7 @@ public class GameActivityMap3 extends AppCompatActivity {
     private static ImageView bottom;
     private static ImageView leftC;
     private static TextView health;
+    private static ImageView powerup;
 
     private static boolean finished;
     @Override
@@ -47,6 +50,7 @@ public class GameActivityMap3 extends AppCompatActivity {
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         enemy1 = findViewById(R.id.imageView42);
         enemy2 = findViewById(R.id.imageView45);
+        powerup = findViewById(R.id.imageView48);
         enemy1.setX((float) 500);
         enemy1.setY((float) 800);
         double x1 = enemy1.getX();
@@ -118,10 +122,15 @@ public class GameActivityMap3 extends AppCompatActivity {
             ActiveSub.setG3Active(false);
             startActivity(endIntent);
         }
-        if (false) { //TODO: check collision with powerup
-            //TODO: remove the powerup from the screen
-            PowerUp powerUp = new PowerUpFreeze(null);
-            powerUp.applyPowerUp(player);
+        if (player.getPlayerX() > powerup.getX()
+                && player.getPlayerX() < powerup.getX() + powerup.getWidth()
+                && player.getPlayerY() > powerup.getY()
+                && player.getPlayerY() < powerup.getY() + powerup.getHeight()) {
+            if (powerup.getVisibility() == View.VISIBLE) {
+                PowerUp powerUp = new PowerUpFreeze(null);
+                powerUp.applyPowerUp(player);
+            }
+            powerup.setVisibility(View.INVISIBLE);
         }
         return true;
     }
