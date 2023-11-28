@@ -82,31 +82,11 @@ public class ViewModel {
         } else {
             return null;
         }
-//        float scale = (float) e.getSize() / 20;
-//        i.setScaleX(scale);
-//        i.setScaleY(scale);
-
         CollisionSub.getCollision().addEnemy(e);
         return e;
     }
 
-    public static void endGame() {
-////        double health = Player.getPlayer().getHealth();
-////        int map = checkMap();
-////        if (health > 0) {
-////            return;
-////        }
-////        if (map == 1) {
-////            GameActivity.terminateGame();
-////            ActiveSub.setG1Active(false);
-////        } else if (map == 2) {
-////            ActiveSub.setG2Active(false);
-////        } else if (map == 3) {
-////            Intent endIntent = new Intent(GameActivity.this, EndActivity.class);
-////            ActiveSub.setG1Active(false);
-////            startActivity(endIntent);
-//        }
-    }
+
     public static void updateEnemyPosition(Enemy e) {
         if (e.getSprite() == null) {
             return;
