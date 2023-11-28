@@ -109,6 +109,7 @@ public class S5UnitTests {
         health.applyPowerUp(Player.getPlayer());
         assertEquals(70.0, Player.getPlayer().getHealth(), 0.5);
         p.resetPlayer();
+        
     }
 
 
