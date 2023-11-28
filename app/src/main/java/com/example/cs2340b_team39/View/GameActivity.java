@@ -137,13 +137,16 @@ public class GameActivity extends AppCompatActivity {
             ViewModel.updatePlayerPosition(0);
         } else if (keyCode == KeyEvent.KEYCODE_S) {
             ViewModel.updatePlayerPosition(2);
-        } else if (keyCode == KeyEvent.KEYCODE_X) {
+        }
+        if (keyCode == KeyEvent.KEYCODE_X) {
             player.setIsAttacking(true);
             ImageView sword = findViewById(R.id.imageView49);
                 sword.setVisibility(View.INVISIBLE);
                 sword.setVisibility(View.VISIBLE);
-
+        } else if (keyCode != KeyEvent.KEYCODE_X) {
+            player.setIsAttacking(false);
         }
+
         //checkCollisions();
         if (player.getPlayerX() > 880 && player.getPlayerX() < 980 && player.getPlayerY() > 1000
                 && player.getPlayerY() < 1100) {

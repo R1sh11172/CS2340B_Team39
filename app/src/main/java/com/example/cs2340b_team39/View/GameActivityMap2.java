@@ -114,6 +114,14 @@ public class GameActivityMap2 extends AppCompatActivity {
         } else if (keyCode == KeyEvent.KEYCODE_S) {
             ViewModel.updatePlayerPosition(2);
         }
+        if (keyCode == KeyEvent.KEYCODE_X) {
+            player.setIsAttacking(true);
+            ImageView sword = findViewById(R.id.imageView53);
+            sword.setVisibility(View.INVISIBLE);
+            sword.setVisibility(View.VISIBLE);
+        } else if (keyCode != KeyEvent.KEYCODE_X) {
+            player.setIsAttacking(false);
+        }
         //checkCollisions();
         if (player.getPlayerX() > 900 && player.getPlayerX() < 1000 && player.getPlayerY() > 650
                 && player.getPlayerY() < 750) {
