@@ -33,6 +33,7 @@ public class GameActivityMap2 extends AppCompatActivity {
     private static ImageView top;
     private static TextView health;
     private static ImageView powerup;
+    private static ImageView sword;
 
     private boolean finished;
     @Override
@@ -52,6 +53,7 @@ public class GameActivityMap2 extends AppCompatActivity {
         enemy1 = findViewById(R.id.imageView41);
         enemy2 = findViewById(R.id.imageView47);
         powerup = findViewById(R.id.imageView46);
+        sword = findViewById(R.id.imageView53);
         enemy1.setX((float) 400);
         enemy1.setY((float) 800);
         double x1 = enemy1.getX();
@@ -88,6 +90,8 @@ public class GameActivityMap2 extends AppCompatActivity {
         if (e2 != null) {
             e2.movePattern();
         }
+        sword.setX(sprite.getX());
+        sword.setY(sprite.getY());
         new CountDownTimer(300000, 100) {
             public void onTick(long millisUntilFinished) {
                 if (!finished) {
@@ -114,13 +118,14 @@ public class GameActivityMap2 extends AppCompatActivity {
         } else if (keyCode == KeyEvent.KEYCODE_S) {
             ViewModel.updatePlayerPosition(2);
         }
+        sword.setX(sprite.getX());
+        sword.setY(sprite.getY());
         if (keyCode == KeyEvent.KEYCODE_X) {
             player.setIsAttacking(true);
-            ImageView sword = findViewById(R.id.imageView53);
-            sword.setVisibility(View.INVISIBLE);
-            sword.setVisibility(View.VISIBLE);
+            sword.setRotation(45);
         } else if (keyCode != KeyEvent.KEYCODE_X) {
             player.setIsAttacking(false);
+            sword.setRotation(0);
         }
         //checkCollisions();
         if (player.getPlayerX() > 900 && player.getPlayerX() < 1000 && player.getPlayerY() > 650
