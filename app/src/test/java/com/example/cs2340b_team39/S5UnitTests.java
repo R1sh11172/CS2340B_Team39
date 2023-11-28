@@ -103,6 +103,13 @@ public class S5UnitTests {
         p.resetPlayer();
     }
     @Test
+    public void healthPowerupHard() {
+        Player p = Player.getPlayer("Test", 0, 2);
+        PowerUp health = new PowerUpHealth(null);
+        health.applyPowerUp(Player.getPlayer());
+        assertEquals(70.0, Player.getPlayer().getHealth(), 0.5);
+        p.resetPlayer();
+    }
 
 
 }
