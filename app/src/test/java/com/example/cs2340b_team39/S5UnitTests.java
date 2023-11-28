@@ -39,4 +39,37 @@ public class S5UnitTests {
         assertEquals(20, Player.getPlayer().getSpeed());
         p.resetPlayer();
     }
+
+    @Test
+    public void freezePowerupEnemy1() {
+        PowerUp freeze = new PowerUpFreeze(null);
+        CollisionSub.getCollision();
+        Enemy enemy1 = new Enemy1(null);
+        CollisionSub.getCollision().addEnemy(enemy1);
+        assertEquals(false, enemy1.getFreeze());
+        freeze.applyPowerUp(Player.getPlayer());
+        assertEquals(true, enemy1.getFreeze());
+    }
+
+    @Test
+    public void freezePowerupEnemy2() {
+        PowerUp freeze = new PowerUpFreeze(null);
+        CollisionSub.getCollision();
+        Enemy enemy1 = new Enemy1(null);
+        CollisionSub.getCollision().addEnemy(enemy1);
+        assertEquals(false, enemy1.getFreeze());
+        freeze.applyPowerUp(Player.getPlayer());
+        assertEquals(true, enemy1.getFreeze());
+    }
+
+    @Test
+    public void freezePowerupEnemy3() {
+        PowerUp freeze = new PowerUpFreeze(null);
+        CollisionSub.getCollision();
+        Enemy enemy1 = new Enemy1(null);
+        CollisionSub.getCollision().addEnemy(enemy1);
+        assertEquals(false, enemy1.getFreeze());
+        freeze.applyPowerUp(Player.getPlayer());
+        assertEquals(true, enemy1.getFreeze());
+    }
 }
