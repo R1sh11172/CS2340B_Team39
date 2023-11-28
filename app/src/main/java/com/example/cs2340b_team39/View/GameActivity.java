@@ -40,6 +40,7 @@ public class GameActivity extends AppCompatActivity {
     private static int screenHeight;
     private static TextView health;
     private static ImageView powerup;
+    private static ImageView sword;
 
     private static boolean finished;
 
@@ -63,6 +64,7 @@ public class GameActivity extends AppCompatActivity {
         enemy1 = findViewById(R.id.imageView9);
         enemy2 = findViewById(R.id.imageView44);
         powerup = findViewById(R.id.imageView43);
+        sword = findViewById(R.id.imageView49);
         enemy1.setX((float) screenWidth / 3);
         enemy1.setY((float) screenHeight / 2);
         double x1 = enemy1.getX();
@@ -101,7 +103,8 @@ public class GameActivity extends AppCompatActivity {
         if (e2 != null) {
             e2.movePattern();
         }
-
+        sword.setX(sprite.getX() + sprite.getWidth());
+        sword.setY(sprite.getY());
         new CountDownTimer(300000, 100) {
             public void onTick(long millisUntilFinished) {
                 if (!finished) {
@@ -138,11 +141,12 @@ public class GameActivity extends AppCompatActivity {
         } else if (keyCode == KeyEvent.KEYCODE_S) {
             ViewModel.updatePlayerPosition(2);
         }
+        sword.setX(sprite.getX() + sprite.getWidth());
+        sword.setY(sprite.getY());
         if (keyCode == KeyEvent.KEYCODE_X) {
             player.setIsAttacking(true);
-            ImageView sword = findViewById(R.id.imageView49);
-                sword.setVisibility(View.INVISIBLE);
-                sword.setVisibility(View.VISIBLE);
+            sword.setVisibility(View.INVISIBLE);
+            sword.setVisibility(View.VISIBLE);
         } else if (keyCode != KeyEvent.KEYCODE_X) {
             player.setIsAttacking(false);
         }

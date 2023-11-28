@@ -68,6 +68,12 @@ public class Score implements Comparable {
     public void setScore(int val) {
         score = val;
     }
+    public TextView getTextView() {
+        return scoreCount;
+    }
+    public int getScore() {
+        return score;
+    }
 
 
 }
