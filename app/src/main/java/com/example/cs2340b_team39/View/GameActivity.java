@@ -21,6 +21,9 @@ import com.example.cs2340b_team39.Model.Difficulty;
 import com.example.cs2340b_team39.Model.Enemy;
 import com.example.cs2340b_team39.Model.EnemyMovement;
 import com.example.cs2340b_team39.Model.Player;
+import com.example.cs2340b_team39.Model.PowerUp;
+import com.example.cs2340b_team39.Model.PowerUpSpeed;
+import com.example.cs2340b_team39.Model.PowerUpDecorator;
 import com.example.cs2340b_team39.R;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
 
@@ -36,6 +39,7 @@ public class GameActivity extends AppCompatActivity {
     private static int screenWidth;
     private static int screenHeight;
     private static TextView health;
+    private static ImageView powerup;
 
     private static boolean finished;
 
@@ -58,6 +62,7 @@ public class GameActivity extends AppCompatActivity {
         difficulty.setText("Difficulty: " + Difficulty.values()[(int) player.getDifficulty()] + "");
         enemy1 = findViewById(R.id.imageView9);
         enemy2 = findViewById(R.id.imageView44);
+        powerup = findViewById(R.id.imageView43);
         enemy1.setX((float) screenWidth / 3);
         enemy1.setY((float) screenHeight / 2);
         double x1 = enemy1.getX();
@@ -146,6 +151,16 @@ public class GameActivity extends AppCompatActivity {
             Intent nextIntent = new Intent(GameActivity.this, GameActivityMap2.class);
             ActiveSub.setG1Active(false);
             startActivity(nextIntent);
+        }
+        if (player.getPlayerX() > powerup.getX()
+                && player.getPlayerX() < powerup.getX() + powerup.getWidth()
+                && player.getPlayerY() > powerup.getY()
+                && player.getPlayerY() < powerup.getY() + powerup.getHeight()) {
+            if (powerup.getVisibility() == View.VISIBLE) {
+                PowerUp powerUp = new PowerUpSpeed(null);
+                powerUp.applyPowerUp(player);
+            }
+            powerup.setVisibility(View.INVISIBLE);
         }
         return true;
     }

@@ -19,6 +19,9 @@ public class EnemyMovement implements Movement {
     }
 
     public void moveLeft(int speed) {
+        if (enemy.getFreeze()) {
+            return;
+        }
         enemy.setX(enemy.getX() - speed);
         if (checkCollisions()) {
             enemy.setX(enemy.getX() + speed);
@@ -27,6 +30,9 @@ public class EnemyMovement implements Movement {
     }
 
     public void moveRight(int speed) {
+        if (enemy.getFreeze()) {
+            return;
+        }
         enemy.setX(enemy.getX() + speed);
         if (checkCollisions()) {
             enemy.setX(enemy.getX() - speed);
@@ -35,6 +41,9 @@ public class EnemyMovement implements Movement {
     }
 
     public void moveUp(int speed) {
+        if (enemy.getFreeze()) {
+            return;
+        }
         enemy.setY(enemy.getY() - speed);
         if (checkCollisions()) {
             enemy.setY(enemy.getY() + speed);
@@ -43,6 +52,9 @@ public class EnemyMovement implements Movement {
     }
 
     public void moveDown(int speed) {
+        if (enemy.getFreeze()) {
+            return;
+        }
         enemy.setY(enemy.getY() + speed);
         if (checkCollisions()) {
             enemy.setY(enemy.getY() - speed);

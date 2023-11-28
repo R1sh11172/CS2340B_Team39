@@ -2,6 +2,8 @@ package com.example.cs2340b_team39.Model;
 
 import android.media.Image;
 
+import com.example.cs2340b_team39.ViewModel.ViewModel;
+
 public class Player {
     private String name;
     private Image avatar;
@@ -115,5 +117,14 @@ public class Player {
     }
     public PlayerMovement getPlayerMovement() {
         return move;
+    }
+
+    public void increaseHealth(int x) {
+        this.health += x;
+        ViewModel.updateHealth();
+    }
+
+    public void increaseSpeed(int x) {
+        this.speed += x;
     }
 }
