@@ -103,7 +103,7 @@ public class GameActivity extends AppCompatActivity {
         if (e2 != null) {
             e2.movePattern();
         }
-        sword.setX(sprite.getX() + sprite.getWidth());
+        sword.setX(sprite.getX());
         sword.setY(sprite.getY());
         new CountDownTimer(300000, 100) {
             public void onTick(long millisUntilFinished) {
@@ -141,14 +141,14 @@ public class GameActivity extends AppCompatActivity {
         } else if (keyCode == KeyEvent.KEYCODE_S) {
             ViewModel.updatePlayerPosition(2);
         }
-        sword.setX(sprite.getX() + sprite.getWidth());
+        sword.setX(sprite.getX());
         sword.setY(sprite.getY());
         if (keyCode == KeyEvent.KEYCODE_X) {
             player.setIsAttacking(true);
-            sword.setVisibility(View.INVISIBLE);
-            sword.setVisibility(View.VISIBLE);
+            sword.setRotation(45);
         } else if (keyCode != KeyEvent.KEYCODE_X) {
             player.setIsAttacking(false);
+            sword.setRotation(0);
         }
 
         //checkCollisions();
