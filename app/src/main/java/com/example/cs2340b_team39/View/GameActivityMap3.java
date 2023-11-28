@@ -17,8 +17,8 @@ import com.example.cs2340b_team39.Model.EnemyMovement;
 import com.example.cs2340b_team39.Model.Player;
 import com.example.cs2340b_team39.Model.PowerUp;
 import com.example.cs2340b_team39.Model.PowerUpFreeze;
-import com.example.cs2340b_team39.Model.PowerUpDecorator;
-import com.example.cs2340b_team39.Model.PowerUpSpeed;
+//import com.example.cs2340b_team39.Model.PowerUpDecorator;
+//import com.example.cs2340b_team39.Model.PowerUpSpeed;
 import com.example.cs2340b_team39.R;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
 

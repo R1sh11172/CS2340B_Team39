@@ -58,7 +58,8 @@ public class CollisionSub {
                 ViewModel.updateHealth();
             } else if (collide && player.getIsAttacking()) {
                 enemies.get(i).setIsDead(true);
-                Player.getPlayer().getScore().setScore(Player.getPlayer().getScore().getScore() + 50);
+                Player.getPlayer().getScore().setScore(Player.getPlayer().getScore().getScore()
+                        + 50);
                 ViewModel.updateScore(Player.getPlayer().getScore().getTextView(),
                         Player.getPlayer().getScore().getScore());
             }
