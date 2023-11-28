@@ -116,4 +116,12 @@ public class Player {
     public PlayerMovement getPlayerMovement() {
         return move;
     }
+
+    public void increaseHealth(int x) {
+        this.health += x;
+    }
+
+    public void increaseSpeed(int x) {
+        this.speed += x;
+    }
 }
