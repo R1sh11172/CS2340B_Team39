@@ -14,6 +14,9 @@ import com.example.cs2340b_team39.Model.Difficulty;
 import com.example.cs2340b_team39.Model.Enemy;
 import com.example.cs2340b_team39.Model.EnemyMovement;
 import com.example.cs2340b_team39.Model.Player;
+import com.example.cs2340b_team39.Model.PowerUp;
+import com.example.cs2340b_team39.Model.PowerUpFreeze;
+import com.example.cs2340b_team39.Model.PowerUpDecorator;
 import com.example.cs2340b_team39.R;
 import com.example.cs2340b_team39.ViewModel.ViewModel;
 
@@ -114,6 +117,11 @@ public class GameActivityMap3 extends AppCompatActivity {
             Intent endIntent = new Intent(GameActivityMap3.this, EndActivity.class);
             ActiveSub.setG3Active(false);
             startActivity(endIntent);
+        }
+        if (false) { //TODO: check collision with powerup
+            //TODO: remove the powerup from the screen
+            PowerUp powerUp = new PowerUpFreeze(null);
+            powerUp.applyPowerUp(player);
         }
         return true;
     }
