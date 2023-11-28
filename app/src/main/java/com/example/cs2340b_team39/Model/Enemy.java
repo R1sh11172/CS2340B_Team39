@@ -17,4 +17,6 @@ public interface Enemy {
 
     boolean getIsDead();
     void setIsDead(boolean b);
+    void setFreeze(boolean b);
+    boolean getFreeze();
 }

@@ -13,6 +13,7 @@ public class Enemy2 implements Enemy {
     private double damage;
     private boolean finished;
     private double size;
+    private boolean frozen;
     private double x;
     private double y;
     private EnemyMovement movement;
@@ -98,6 +99,12 @@ public class Enemy2 implements Enemy {
     }
     public void setFinished(boolean b) {
         finished = b;
+    }
+    public void setFreeze(boolean b) {
+        frozen = b;
+    }
+    public boolean getFreeze() {
+        return frozen;
     }
     public void setMovement(EnemyMovement m) {
         movement = m;

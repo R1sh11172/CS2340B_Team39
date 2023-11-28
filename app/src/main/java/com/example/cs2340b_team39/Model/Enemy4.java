@@ -13,6 +13,7 @@ public class Enemy4 implements Enemy {
     private double speed;
     private double damage;
     private double size;
+    private boolean frozen;
     private double x;
     private double y;
     private EnemyMovement movement;
@@ -108,6 +109,12 @@ public class Enemy4 implements Enemy {
     }
     public void setMovement(EnemyMovement m) {
         movement = m;
+    }
+    public void setFreeze(boolean b) {
+        frozen = b;
+    }
+    public boolean getFreeze() {
+        return frozen;
     }
 
     public boolean getIsDead() {

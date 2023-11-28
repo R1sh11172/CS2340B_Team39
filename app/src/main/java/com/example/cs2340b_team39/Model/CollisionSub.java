@@ -20,6 +20,11 @@ public class CollisionSub {
         }
         return collisionSub;
     }
+    public void freezeEnemies() {
+        for (Enemy enemy: enemies) {
+            enemy.setFreeze(true);
+        }
+    }
     public void checkPECollision() {
         player = Player.getPlayer();
         for (int i = 0; i < enemies.size(); i++) {
